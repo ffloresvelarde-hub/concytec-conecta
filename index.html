@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concytec Conecta | Todos los trámites, fondos e incentivos de CTI en un solo lugar</title>
+  
+  <!-- Meta tags institucionales y SEO -->
+  <meta name="description" content="Ventanilla Única Digital del Consejo Nacional de Ciencia, Tecnología e Innovación (Concytec) de Perú. Accede a Renacyt, Prociencia, ALICIA, deducción tributaria I+D+i y más.">
+  <meta name="keywords" content="Concytec, Conecta, Renacyt, Prociencia, ALICIA, CTI Vitae, Fondos Concursables, Becas, Ley 30309, PerúCRIS, GovTech Perú">
+  <meta name="author" content="Consejo Nacional de Ciencia, Tecnología e Innovación - Concytec">
+  <meta name="theme-color" content="#0B2F5C">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Concytec Conecta | Ventanilla Única Digital de CTI">
+  <meta property="og:description" content="Todo el ecosistema de ciencia, tecnología e innovación del Perú en una sola plataforma digital interactiva.">
+  <meta property="og:url" content="https://conecta.concytec.gob.pe">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Concytec Conecta">
+
+  <!-- Favicon Oficial Concytec Conecta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Montserrat (Branding y Títulos) y Open Sans (Lectura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Configuración Tailwind con Tokens Modernos de Concytec & GOB.PE -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            concytec: {
+              navy: '#0B2F5C',      // Primario Institucional Concytec
+              dark: '#071E3D',      // Acento nocturno profundidad
+              cyan: '#0085CA',      // Acento Tecnológico Concytec
+              cyanVinc: '#4FC1DA',  // Cyan Eléctrico Innovación
+              cyanDark: '#013C49',
+              orangeVinc: '#F18726',// Naranja dinamismo CTI
+              greenVinc: '#10B981', // Verde esmeralda estado
+            },
+            gob: {
+              red: '#C8102E',       // Rojo Oficial Identidad Perú GOB.PE
+              redDark: '#A00C24',
+            },
+            canvas: '#F8FAFC',
+            surface: '#FFFFFF',
+            text: {
+              main: '#1E293B',      // Slate 800
+              secondary: '#475569', // Slate 600
+              muted: '#64748B',     // Slate 500
+            }
+          },
+          fontFamily: {
+            brand: ['Montserrat', 'system-ui', 'sans-serif'],
+            body: ['"Open Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 2px 8px -2px rgba(11, 47, 92, 0.08), 0 1px 4px -1px rgba(11, 47, 92, 0.04)',
+            'card-hover': '0 20px 30px -10px rgba(11, 47, 92, 0.16), 0 10px 15px -5px rgba(0, 133, 202, 0.1)',
+            'glow-cyan': '0 0 25px -3px rgba(0, 133, 202, 0.4)',
+            'glow-orange': '0 0 25px -3px rgba(241, 135, 38, 0.4)',
+          },
+          borderRadius: {
+            'xl': '0.75rem',
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Tipografía y estilos base */
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+      color: #1E293B;
+      background-color: #F8FAFC;
+    }
+    h1, h2, h3, h4, h5, h6, .font-brand {
+      font-family: 'Montserrat', system-ui, sans-serif;
+    }
+
+    /* Fondo dinámico Hero con malla científica animada */
+    .bg-hero-dynamic {
+      background-color: #0B2F5C;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(79, 193, 218, 0.28) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(241, 135, 38, 0.20) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(0, 133, 202, 0.15) 0%, transparent 60%),
+        linear-gradient(135deg, #0B2F5C 0%, #071E3D 50%, #041226 100%);
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Esferas de luz ambiental flotante */
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.1); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-25px, 25px) scale(1.08); }
+    }
+    .orb-1 {
+      animation: floatOrb1 14s ease-in-out infinite;
+    }
+    .orb-2 {
+      animation: floatOrb2 18s ease-in-out infinite;
+    }
+
+    /* Resaltado dinámico en búsquedas con tildes normalizadas */
+    mark.highlight {
+      background: linear-gradient(120deg, #BAE6FD 0%, #E0F2FE 100%);
+      color: #0369A1;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 0 4px;
+    }
+
+    /* Foco visible accesible */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #0085CA !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Reducción de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0085CA;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-concytec-cyan selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- AVISO DE COOKIES Y CONSENTIMIENTO DE NAVEGACIÓN (LEY 29733)              -->
+  <!-- ========================================================================= -->
+  <aside id="cookieNoticeBanner" class="bg-concytec-dark text-white text-xs px-4 py-2 border-b border-slate-700 flex items-center justify-between gap-4 z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 w-full">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-concytec-cyanVinc animate-ping"></span>
+        <p class="text-slate-300">
+          Utilizamos cookies técnicas necesarias para la navegación y autenticación en la Ventanilla Única CTI. Conoce nuestra 
+          <button type="button" onclick="window.concytecApp.openLegalModal('privacidad')" class="text-concytec-cyanVinc underline hover:text-white font-medium">Política de Protección de Datos Personales</button>.
+        </p>
+      </div>
+      <button 
+        type="button"
+        onclick="window.concytecApp.dismissCookieNotice()" 
+        class="self-end sm:self-auto bg-white/10 hover:bg-white/20 text-white px-3 py-1 rounded-lg text-xs font-semibold transition-colors flex-shrink-0"
+        aria-label="Aceptar aviso de cookies"
+      >
+        Entendido
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- HEADER INSTITUCIONAL DINÁMICO (GOB.PE + CONCYTEC CONECTA)                -->
+  <!-- ========================================================================= -->
+  <header class="w-full sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 transition-all">
+    
+    <!-- 1. Franja GOB.PE (Slim 26px) -->
+    <div class="bg-gob-red text-white py-1 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-2">
+          <!-- Escudo Nacional del Perú Oficial -->
+          <svg class="w-3.5 h-3.5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 6v6"/>
+            <path d="M9 10l3 3 3-3"/>
+          </svg>
+          <span class="font-medium tracking-wide">Plataforma digital única del Estado Peruano</span>
+        </div>
+        <div class="flex items-center space-x-3 text-xs opacity-90">
+          <a href="https://www.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1">
+            <span>Visitar GOB.PE</span>
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <span class="opacity-40">|</span>
+          <span class="hidden sm:inline-flex items-center gap-1 text-emerald-200 font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Canal Oficial Concytec
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Barra Principal Compacta con Isotipo Dinámico y Accesos Rápidos -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Navegación principal">
+      
+      <!-- Marca Principal con Isotipo Vectorial Oficial -->
+      <a href="#" class="flex items-center gap-3.5 group rounded-xl p-1 focus-visible:ring-2 focus-visible:ring-concytec-cyan" aria-label="Ir al inicio de Concytec Conecta">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-concytec-navy via-concytec-dark to-[#031326] p-1.5 flex items-center justify-center border border-sky-400/30 shadow-md group-hover:shadow-glow-cyan transition-all group-hover:scale-105 flex-shrink-0">
+          <svg class="w-full h-full" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="60" cy="60" rx="44" ry="18" stroke="#4FC1DA" stroke-width="3" stroke-dasharray="5 3" transform="rotate(-30 60 60)"/>
+            <ellipse cx="60" cy="60" rx="44" ry="18" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" transform="rotate(30 60 60)"/>
+            <line x1="60" y1="60" x2="26" y2="40" stroke="#4FC1DA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="94" y2="40" stroke="#4FC1DA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="60" y2="95" stroke="#F18726" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="25" r="5.5" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+            <circle cx="26" cy="40" r="6" fill="#38BDF8" stroke="#0B2F5C" stroke-width="2"/>
+            <circle cx="94" cy="40" r="6" fill="#0085CA" stroke="#FFFFFF" stroke-width="2"/>
+            <circle cx="60" cy="95" r="5" fill="#F18726" stroke="#FFFFFF" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="14" fill="#0B2F5C" stroke="#4FC1DA" stroke-width="2.5"/>
+            <circle cx="60" cy="60" r="8" fill="#4FC1DA"/>
+            <circle cx="60" cy="60" r="3.5" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-brand font-extrabold text-xl tracking-tight text-concytec-navy">Concytec</span>
+            <span class="font-brand font-extrabold text-xl tracking-tight text-concytec-cyan">Conecta</span>
+            <span class="text-[10px] font-bold bg-sky-100 text-concytec-navy px-1.5 py-0.5 rounded uppercase hidden sm:inline-block">SINACTI</span>
+          </div>
+          <span class="text-xs text-text-secondary font-medium tracking-tight">Ventanilla Única Digital de CTI</span>
+        </div>
+      </a>
+
+      <!-- Menú de Navegación Desktop con Iconos Semánticos -->
+      <div class="hidden lg:flex items-center space-x-1 text-xs font-brand font-bold uppercase tracking-wider text-text-secondary">
+        <a href="#directorio" class="px-3 py-2 rounded-xl hover:text-concytec-navy hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span>Directorio</span>
+        </a>
+        <a href="#convocatorias" class="px-3 py-2 rounded-xl hover:text-concytec-navy hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-concytec-orangeVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          <span>Convocatorias</span>
+        </a>
+        <button type="button" onclick="window.concytecApp.openWizardModal()" class="px-3.5 py-2 rounded-xl text-concytec-cyan bg-sky-50 hover:bg-sky-100 transition-colors flex items-center gap-1.5 border border-sky-200">
+          <svg class="w-4 h-4 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Asistente Guiado</span>
+        </button>
+        <a href="#soporte" class="px-3 py-2 rounded-xl hover:text-concytec-navy hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Ayuda</span>
+        </a>
+      </div>
+
+      <!-- Zona de Autenticación / Login con Microinteracciones -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Botón Iniciar Sesión -->
+        <button 
+          id="btnLoginAction" 
+          type="button"
+          onclick="window.concytecApp.openLoginModal()" 
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-concytec-navy to-concytec-dark hover:from-concytec-dark hover:to-concytec-navy text-white px-4 py-2.5 rounded-xl font-brand font-bold text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow-md active:scale-95 border border-sky-400/20"
+          aria-haspopup="dialog"
+        >
+          <svg class="w-4 h-4 text-concytec-cyanVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/><path d="M12 14c-4 0-7 2-7 4v1h14v-1c0-2-3-4-7-4z"/></svg>
+          <span id="loginBtnLabel" class="hidden sm:inline">Ingresar con DNI</span>
+          <span class="sm:hidden">Ingresar</span>
+        </button>
+
+        <!-- Menú Logueado (Oculto inicialmente) -->
+        <div id="userLoggedInMenu" class="hidden flex items-center gap-2">
+          <a href="#mis-tramites" class="text-xs font-brand font-bold text-concytec-navy bg-sky-100 hover:bg-sky-200 px-3.5 py-2 rounded-xl transition-colors flex items-center gap-2 shadow-sm border border-sky-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="userNameDisplay">Dr. Carlos Mendoza</span>
+          </a>
+          <button 
+            type="button" 
+            onclick="window.concytecApp.handleLogout()" 
+            class="p-2 text-slate-500 hover:text-gob-red hover:bg-red-50 rounded-xl transition-colors"
+            title="Cerrar sesión"
+            aria-label="Cerrar sesión"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+
+        <!-- Botón Menú Mobile -->
+        <button 
+          id="mobileMenuBtn" 
+          type="button"
+          onclick="window.concytecApp.toggleMobileMenu()" 
+          class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-concytec-cyan" 
+          aria-expanded="false" 
+          aria-controls="mobileMenu"
+          aria-label="Abrir menú"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-slate-50 border-t border-slate-200 py-3 px-4 space-y-2 text-xs font-semibold">
+      <a href="#directorio" onclick="window.concytecApp.toggleMobileMenu()" class="block p-2 rounded-xl text-slate-700 hover:bg-white hover:text-concytec-navy">
+        Directorio de Servicios
+      </a>
+      <a href="#convocatorias" onclick="window.concytecApp.toggleMobileMenu()" class="block p-2 rounded-xl text-slate-700 hover:bg-white hover:text-concytec-navy">
+        Convocatorias Abiertas (Prociencia)
+      </a>
+      <button type="button" onclick="window.concytecApp.openWizardModal(); window.concytecApp.toggleMobileMenu()" class="w-full text-left p-2 rounded-xl text-concytec-cyan hover:bg-white font-bold flex items-center gap-1.5">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Asistente Guiado ("¿Qué trámite buscas?")</span>
+      </button>
+      <a href="#soporte" onclick="window.concytecApp.toggleMobileMenu()" class="block p-2 rounded-xl text-slate-700 hover:bg-white hover:text-concytec-navy">
+        Mesa de Ayuda y Contacto
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- B. HERO SECTION DINÁMICO (LUCES AMBIENTALES + SMART SEARCH PREDICTIVO)    -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-hero-dynamic text-white pt-16 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-xl">
+    
+    <!-- Luces y Orbes de Ambiente Flotante -->
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full bg-concytec-cyan/20 blur-3xl pointer-events-none orb-1"></div>
+    <div class="absolute bottom-5 right-10 w-96 h-96 rounded-full bg-concytec-orangeVinc/15 blur-3xl pointer-events-none orb-2"></div>
+
+    <div class="relative max-w-4xl mx-auto text-center z-10">
+      
+      <!-- Eyebrow Badge con Icono Dinámico -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-brand font-bold uppercase tracking-wider text-sky-200 mb-6 shadow-sm">
+        <svg class="w-4 h-4 text-concytec-orangeVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>Ventanilla Única Oficial de Ciencia, Tecnología e Innovación</span>
+      </div>
+
+      <!-- Titular con Gradiente Vibrante -->
+      <h1 class="font-brand font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-4">
+        Todos los trámites, fondos e incentivos de CTI <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-200 to-amber-300">en un solo lugar</span>.
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed mb-9 font-normal">
+        Encuentra financiamiento para proyectos, califica en Renacyt, consulta tesis en ALICIA y accede a beneficios tributarios en I+D+i.
+      </p>
+
+      <!-- BUSCADOR CENTRAL PREDICTIVO ELEVADO (COMBOBOX ACCESIBLE) -->
+      <div class="relative max-w-2xl mx-auto text-left">
+        <form 
+          role="search" 
+          onsubmit="event.preventDefault(); window.concytecApp.triggerSearchSubmit();"
+          class="relative flex items-center bg-white rounded-2xl shadow-2xl p-2.5 border-2 border-transparent focus-within:border-concytec-cyanVinc focus-within:ring-4 focus-within:ring-concytec-cyan/20 transition-all"
+        >
+          <div class="pl-3 pr-2 text-concytec-cyan" aria-hidden="true">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          
+          <label for="smartSearchInput" class="sr-only">Buscar trámites, convocatorias o fondos en Concytec Conecta</label>
+          <input 
+            type="text" 
+            id="smartSearchInput"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="predictiveResultsList"
+            class="w-full py-2.5 px-2 text-slate-800 placeholder-slate-400 bg-transparent text-sm sm:text-base font-semibold focus:outline-none"
+            placeholder="¿Qué necesitas hacer hoy? (ej. Renacyt, deducción tributaria, becas doctorales, tesis...)"
+            autocomplete="off"
+          >
+
+          <!-- Botón de limpiar input -->
+          <button 
+            id="clearSearchBtn" 
+            type="button"
+            onclick="window.concytecApp.clearSearch()" 
+            class="hidden text-slate-400 hover:text-slate-600 p-2 rounded-xl mr-1 transition-colors"
+            title="Limpiar búsqueda"
+            aria-label="Limpiar búsqueda"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+
+          <!-- Botón de acción buscar con gradiente -->
+          <button 
+            type="submit" 
+            class="bg-gradient-to-r from-concytec-navy to-concytec-cyan hover:from-concytec-cyan hover:to-concytec-navy text-white px-5 py-2.5 rounded-xl font-brand font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 flex-shrink-0 shadow-md active:scale-95"
+            aria-label="Buscar en el catálogo"
+          >
+            <span>Buscar</span>
+            <svg class="w-4 h-4 text-cyan-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+
+        <!-- DESPLEGABLE PREDICTIVO (ROLE LISTBOX) CON ICONOS ENRIQUECIDOS -->
+        <div 
+          id="predictiveDropdown" 
+          class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-50 text-slate-800"
+        >
+          <div class="p-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between text-xs text-text-secondary font-bold uppercase tracking-wider">
+            <span id="predictiveResultsCount">Servicios sugeridos</span>
+            <span class="text-xs text-slate-500 font-normal">Navega con flechas ↑↓ y presiona Enter</span>
+          </div>
+          <ul 
+            id="predictiveResultsList" 
+            role="listbox" 
+            class="divide-y divide-slate-100 max-h-80 overflow-y-auto"
+            aria-label="Sugerencias predictivas"
+          >
+            <!-- Inyectado dinámicamente -->
+          </ul>
+        </div>
+
+        <!-- Chips de Búsquedas Populares con Iconos -->
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-300">
+          <span class="text-concytec-cyanVinc font-bold mr-1 uppercase tracking-wider flex items-center gap-1 text-xs">
+            <svg class="w-3.5 h-3.5 text-concytec-orangeVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Populares:
+          </span>
+          <button type="button" onclick="window.concytecApp.applyQuickQuery('Renacyt')" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15 transition-all hover:scale-105">Renacyt</button>
+          <button type="button" onclick="window.concytecApp.applyQuickQuery('Prociencia')" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15 transition-all hover:scale-105">Fondos Prociencia</button>
+          <button type="button" onclick="window.concytecApp.applyQuickQuery('Ley 30309')" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15 transition-all hover:scale-105">Deducción Ley 30309</button>
+          <button type="button" onclick="window.concytecApp.applyQuickQuery('ALICIA')" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15 transition-all hover:scale-105">Tesis ALICIA</button>
+          <button type="button" onclick="window.concytecApp.applyQuickQuery('PerúCRIS')" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15 transition-all hover:scale-105">PerúCRIS</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TARJETAS DE MÉTRICAS GOVTECH DINÁMICAS CON ICONOS (BENTO STYLE) -->
+    <div class="max-w-5xl mx-auto mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 text-left z-10 relative">
+      
+      <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-300 flex items-center justify-center mb-2.5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        </div>
+        <div class="text-2xl font-black text-white font-brand">+11,500</div>
+        <div class="text-xs text-slate-300 font-medium">Investigadores Renacyt</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center mb-2.5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div class="text-2xl font-black text-white font-brand">S/ 85M+</div>
+        <div class="text-xs text-slate-300 font-medium">Subvenciones I+D Adjudicadas</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center mb-2.5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="text-2xl font-black text-white font-brand">500,000+</div>
+        <div class="text-xs text-slate-300 font-medium">Publicaciones y Tesis en ALICIA</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-cyan-400/20 text-cyan-300 flex items-center justify-center mb-2.5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="text-2xl font-black text-white font-brand">100%</div>
+        <div class="text-xs text-slate-300 font-medium">Trámites Virtuales 24/7</div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3">
+      <span class="text-xs text-slate-400 italic">Fuente: Registro Nacional Renacyt y Portal de Transparencia de Concytec (Actualizado 2026).</span>
+    </div>
+
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SELECTOR DE PERFIL INTERACTIVO ("NAVEGA SEGÚN TU ROL")                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 bg-white border-b border-slate-200 scroll-mt-20" id="perfiles">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-concytec-cyan flex items-center gap-1.5 mb-1.5">
+            <svg class="w-4 h-4 text-concytec-orangeVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Segmentación por Actor del SINACTI</span>
+          </span>
+          <h2 class="font-brand font-black text-2xl sm:text-3xl text-concytec-navy uppercase tracking-tight">
+            Navega según tu rol
+          </h2>
+          <p class="text-xs sm:text-sm text-text-secondary mt-1">
+            Filtra el ecosistema y visualiza convocatorias, acreditaciones e incentivos específicos para tus objetivos.
+          </p>
+        </div>
+
+        <!-- Indicador de Rol Activo -->
+        <div id="roleNoticeBadge" class="hidden mt-3 md:mt-0 flex items-center gap-2 bg-sky-50 text-concytec-navy border border-sky-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold">
+          <span>Filtrando por: <strong id="roleNoticeLabel" class="text-concytec-cyan font-bold">Investigador</strong></span>
+          <button type="button" onclick="window.concytecApp.setRoleFilter('Todos')" class="text-slate-500 hover:text-gob-red underline ml-1">Ver todos</button>
+        </div>
+      </div>
+
+      <!-- Grid de 4 Perfiles con Iconos 3D y Microinteracciones -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" role="group" aria-label="Selector de rol">
+        
+        <!-- Rol 1: Investigador -->
+        <button 
+          type="button"
+          onclick="window.concytecApp.setRoleFilter('Investigador')"
+          id="profileCard-Investigador"
+          class="profile-card group text-left p-5 rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-concytec-cyan hover:bg-white hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
+          aria-pressed="false"
+        >
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-400/20 to-concytec-cyan/10 text-concytec-cyan flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-concytec-cyan group-hover:text-white transition-all shadow-sm">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-concytec-cyan bg-sky-100 px-2 py-0.5 rounded-full">Academia</span>
+              <span class="text-xs text-slate-500 font-semibold">5 servicios</span>
+            </div>
+            <h3 class="font-brand font-bold text-base text-text-main group-hover:text-concytec-navy mb-1.5 leading-snug">
+              Investigador(a) / Académico
+            </h3>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Calificación Renacyt, fondos de investigación aplicada y acceso a bases científicas internacionales.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-concytec-cyan">
+            <span>Ver servicios</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </button>
+
+        <!-- Rol 2: Empresa -->
+        <button 
+          type="button"
+          onclick="window.concytecApp.setRoleFilter('Empresa')"
+          id="profileCard-Empresa"
+          class="profile-card group text-left p-5 rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-concytec-orangeVinc hover:bg-white hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
+          aria-pressed="false"
+        >
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400/20 to-concytec-orangeVinc/10 text-concytec-orangeVinc flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-concytec-orangeVinc group-hover:text-white transition-all shadow-sm">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-concytec-orangeVinc bg-amber-100 px-2 py-0.5 rounded-full">Industria</span>
+              <span class="text-xs text-slate-500 font-semibold">4 servicios</span>
+            </div>
+            <h3 class="font-brand font-bold text-base text-text-main group-hover:text-concytec-navy mb-1.5 leading-snug">
+              Empresa / Emprendedor
+            </h3>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Deducción tributaria de hasta 240% en I+D+i (Ley 30309), licenciamiento y catálogo tecnológico Vincúlate.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-concytec-orangeVinc">
+            <span>Ver incentivos</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </button>
+
+        <!-- Rol 3: Universidad -->
+        <button 
+          type="button"
+          onclick="window.concytecApp.setRoleFilter('Universidad')"
+          id="profileCard-Universidad"
+          class="profile-card group text-left p-5 rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-emerald-500 hover:bg-white hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
+          aria-pressed="false"
+        >
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400/20 to-emerald-600/10 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31L4.47 19.46A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.73-2.54L14 9.31V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Instituciones</span>
+              <span class="text-xs text-slate-500 font-semibold">5 servicios</span>
+            </div>
+            <h3 class="font-brand font-bold text-base text-text-main group-hover:text-concytec-navy mb-1.5 leading-snug">
+              Universidad / Laboratorio
+            </h3>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Infraestructura científica PerúCRIS, alianzas de transferencia y fondos institucionales de investigación.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-emerald-600">
+            <span>Ver capacidades</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </button>
+
+        <!-- Rol 4: Docente / Estudiante -->
+        <button 
+          type="button"
+          onclick="window.concytecApp.setRoleFilter('Docente / Estudiante')"
+          id="profileCard-Docente / Estudiante"
+          class="profile-card group text-left p-5 rounded-3xl bg-slate-50 border-2 border-slate-200 hover:border-purple-500 hover:bg-white hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
+          aria-pressed="false"
+        >
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400/20 to-purple-600/10 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">Formación</span>
+              <span class="text-xs text-slate-500 font-semibold">3 servicios</span>
+            </div>
+            <h3 class="font-brand font-bold text-base text-text-main group-hover:text-concytec-navy mb-1.5 leading-snug">
+              Docente / Estudiante
+            </h3>
+            <p class="text-xs text-text-secondary leading-relaxed">
+              Semilleros STEAM escolares, Feria Eureka, repositorio nacional ALICIA y cursos gratuitos con certificación.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-purple-600">
+            <span>Ver recursos</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BANNER DINÁMICO: ASISTENTE GUIADO ("¿NO SABES POR DÓNDE EMPEZAR?")       -->
+  <!-- ========================================================================= -->
+  <section class="bg-gradient-to-r from-concytec-navy via-[#0A3D78] to-concytec-dark text-white py-8 px-4 sm:px-6 lg:px-8 border-y border-sky-900">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-concytec-cyanVinc border border-white/20 shadow-glow-cyan flex-shrink-0">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-concytec-cyanVinc">Orientación Rápida</span>
+          <h3 class="font-brand font-bold text-lg sm:text-xl text-white">¿No sabes qué trámite o fondo necesitas?</h3>
+          <p class="text-xs sm:text-sm text-slate-200">Responde 3 preguntas sencillas y nuestro recomendador te guiará al servicio indicado.</p>
+        </div>
+      </div>
+      <button 
+        type="button" 
+        onclick="window.concytecApp.openWizardModal()" 
+        class="bg-concytec-cyanVinc hover:bg-sky-300 text-concytec-cyanDark px-6 py-3 rounded-2xl font-brand font-extrabold text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-2 flex-shrink-0"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>Iniciar Asistente (3 clics)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PANEL "MIS TRÁMITES ACTIVOS" (TRAS LOGIN)                                -->
+  <!-- ========================================================================= -->
+  <section id="mis-tramites" class="hidden bg-sky-50/80 py-8 px-4 sm:px-6 lg:px-8 border-b border-sky-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-concytec-cyan flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Panel Personal CTI
+          </span>
+          <h2 class="font-brand font-bold text-xl text-concytec-navy">Mis Trámites y Postulaciones Activas</h2>
+        </div>
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-200">Sesión DNI Verificada</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+            <span>Expediente: #2026-00482</span>
+            <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">En Evaluación</span>
+          </div>
+          <h3 class="font-brand font-bold text-sm text-text-main">Renovación de Calificación Renacyt</h3>
+          <p class="text-xs text-text-secondary mt-1">Evaluación de producción científica por comité DEGC.</p>
+          <div class="mt-3 text-xs text-concytec-cyan font-semibold flex items-center gap-1">
+            <span>Consultar expediente</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+            <span>Subvención Prociencia</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Aprobado</span>
+          </div>
+          <h3 class="font-brand font-bold text-sm text-text-main">Proyecto I+D Aplicada 2026-I</h3>
+          <p class="text-xs text-text-secondary mt-1">Informe de avance técnico validado satisfactoriamente.</p>
+          <div class="mt-3 text-xs text-concytec-cyan font-semibold flex items-center gap-1">
+            <span>Descargar constancia oficial</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+            <span>Capacítate Virtual</span>
+            <span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">En Curso (75%)</span>
+          </div>
+          <h3 class="font-brand font-bold text-sm text-text-main">Integridad Científica y Ética en CTI</h3>
+          <p class="text-xs text-text-secondary mt-1">Módulo 3 de 4 completado con éxito.</p>
+          <div class="mt-3 text-xs text-concytec-cyan font-semibold flex items-center gap-1">
+            <span>Ir al campus virtual</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- C. DIRECTORIO DE SERVICIOS (BARRA DE FILTROS UNIFICADA EN UN SOLO LUGAR) -->
+  <!-- ========================================================================= -->
+  <main class="flex-grow py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full scroll-mt-20" id="directorio">
+    
+    <!-- BARRA UNIFICADA DE FILTROS Y HERRAMIENTAS -->
+    <div class="bg-white p-6 rounded-3xl shadow-card border border-slate-200 mb-8">
+      
+      <!-- Encabezado con Contador y Botón Limpiar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+          <div>
+            <h2 class="font-brand font-black text-xl text-concytec-navy uppercase tracking-tight">
+              Catálogo Oficial de Servicios CTI
+            </h2>
+            <span 
+              id="serviceCounterBadge" 
+              class="text-xs text-text-secondary font-semibold"
+              aria-live="polite"
+            >
+              Mostrando 10 de 10 servicios oficiales
+            </span>
+          </div>
+        </div>
+
+        <button 
+          id="btnResetAllFilters" 
+          type="button"
+          onclick="window.concytecApp.resetFilters()" 
+          class="hidden self-start sm:self-center text-xs font-bold text-slate-500 hover:text-gob-red flex items-center gap-1.5 transition-colors bg-slate-100 hover:bg-red-50 px-3 py-1.5 rounded-xl border border-slate-200"
+          aria-label="Restablecer filtros"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          <span>Restablecer filtros</span>
+        </button>
+      </div>
+
+      <!-- Filtro por Píldoras de Categorías Oficiales (Conteo e Iconos) -->
+      <div class="pt-4 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" role="group" aria-label="Filtro de categorías">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 flex-shrink-0 mr-1 flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          Categorías:
+        </span>
+        
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Todos')" id="catChip-Todos" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-concytec-navy text-white shadow-sm" aria-pressed="true">
+          Todas (10)
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Acreditación')" id="catChip-Acreditación" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          <span>Acreditación</span>
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Fondos y Becas')" id="catChip-Fondos y Becas" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <span>Fondos y Becas</span>
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Literatura y Datos')" id="catChip-Literatura y Datos" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>Literatura y Datos</span>
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Empresas e Innovación')" id="catChip-Empresas e Innovación" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <span>Empresas (Ley 30309)</span>
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Infraestructura')" id="catChip-Infraestructura" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Infraestructura</span>
+        </button>
+        <button type="button" onclick="window.concytecApp.setCategoryFilter('Formación y Semilleros')" id="catChip-Formación y Semilleros" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5" aria-pressed="false">
+          <svg class="w-3.5 h-3.5 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
+          <span>Formación STEAM</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- GRID DINÁMICO DE TARJETAS DE SERVICIOS -->
+    <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Catálogo oficial">
+      <!-- Inyectado dinámicamente -->
+    </div>
+
+    <!-- ESTADO VACÍO ACCESIBLE (EMPTY STATE) -->
+    <div id="emptyState" class="hidden text-center py-16 px-4 bg-white rounded-3xl border border-slate-200">
+      <div class="w-16 h-16 rounded-full bg-sky-50 text-concytec-cyan mx-auto flex items-center justify-center mb-4 border border-sky-100">
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      </div>
+      <h3 class="font-brand font-bold text-lg text-text-main mb-1">No se encontraron servicios</h3>
+      <p class="text-xs sm:text-sm text-text-secondary max-w-md mx-auto mb-6">
+        No hay trámites que coincidan con los criterios seleccionados. Prueba buscando con otros términos o restablece los filtros.
+      </p>
+      <button 
+        type="button" 
+        onclick="window.concytecApp.resetFilters()" 
+        class="inline-flex items-center gap-2 bg-concytec-navy hover:bg-concytec-dark text-white px-5 py-2.5 rounded-2xl text-xs font-brand font-bold uppercase transition-all shadow-md active:scale-95"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        <span>Restablecer catálogo completo</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN DINÁMICA: CONVOCATORIAS ABIERTAS PROCIENCIA (FECHAS DINÁMICAS)    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 bg-slate-100/90 border-t border-slate-200 scroll-mt-20" id="convocatorias">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-concytec-orangeVinc flex items-center gap-1.5 mb-1">
+            <svg class="w-4 h-4 text-concytec-orangeVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Subvenciones y Financiamiento</span>
+          </span>
+          <h2 class="font-brand font-black text-2xl sm:text-3xl text-concytec-navy uppercase tracking-tight">
+            Convocatorias Activas Prociencia
+          </h2>
+          <p class="text-xs sm:text-sm text-text-secondary mt-1">Subvenciones financieras no reembolsables para proyectos de investigación aplicada y becas.</p>
+        </div>
+        <a href="https://prociencia.gob.pe/convocatorias/" target="_blank" rel="noopener noreferrer" class="mt-3 md:mt-0 text-xs font-bold text-concytec-cyan hover:underline flex items-center gap-1 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
+          <span>Ver calendario anual en Prociencia</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div id="convocatoriasCardsList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Renderizado dinámicamente con fechas calculadas en tiempo real -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- WIDGET DE FEEDBACK: "¿TE FUE ÚTIL ESTA INFORMACIÓN?" (GOVTECH)           -->
+  <!-- ========================================================================= -->
+  <section class="bg-white border-t border-slate-200 py-6 px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <div id="feedbackQuestionBlock">
+        <p class="text-xs sm:text-sm font-semibold text-text-main mb-3">
+          ¿Te fue útil la información de esta plataforma?
+        </p>
+        <div class="flex items-center justify-center gap-3">
+          <button 
+            type="button" 
+            onclick="window.concytecApp.submitFeedback(true)" 
+            class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 hover:border-emerald-500 hover:text-emerald-700 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+            aria-label="Sí, fue útil"
+          >
+            <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+            <span>Sí</span>
+          </button>
+          <button 
+            type="button" 
+            onclick="window.concytecApp.submitFeedback(false)" 
+            class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 hover:border-gob-red hover:text-gob-red transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+            aria-label="No, no fue útil"
+          >
+            <svg class="w-4 h-4 text-gob-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"/></svg>
+            <span>No</span>
+          </button>
+        </div>
+      </div>
+      <div id="feedbackThanksBlock" class="hidden text-xs text-emerald-700 font-semibold p-2 bg-emerald-50 rounded-xl border border-emerald-200">
+        ¡Gracias por tu opinión! Tu respuesta ayuda a perfeccionar la Ventanilla Única de Ciencia y Tecnología del Perú.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BANNER DE CONTACTO Y MESA DE PARTES VIRTUAL                              -->
+  <!-- ========================================================================= -->
+  <section class="bg-concytec-navy text-white py-10 px-4 sm:px-6 lg:px-8 scroll-mt-20" id="soporte">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-concytec-cyanVinc flex-shrink-0 border border-white/20 shadow-glow-cyan">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-brand font-bold text-lg text-white">Central Telefónica y Mesa de Ayuda</h3>
+          <p class="text-xs sm:text-sm text-slate-300">Orientación oficial en trámites de Renacyt, convocatorias Prociencia y Mesa de Partes Digital.</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+        <a href="mailto:mesadepartes@concytec.gob.pe" class="flex-1 sm:flex-initial text-center bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all">
+          mesadepartes@concytec.gob.pe
+        </a>
+        <a href="tel:+5113990030" class="flex-1 sm:flex-initial text-center bg-concytec-cyan hover:bg-[#0074b0] text-white px-5 py-2.5 rounded-xl text-xs font-brand font-bold uppercase transition-all shadow-md">
+          (01) 399-0030
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER INSTITUCIONAL (SIN ALERTS, CON PÁGINAS LEGALES REALES)            -->
+  <!-- ========================================================================= -->
+  <footer class="bg-concytec-dark text-slate-300 text-xs border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Columna 1: Identidad y Sede -->
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <span class="font-brand font-extrabold text-white text-base uppercase">Concytec Conecta</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed mb-4">
+            Consejo Nacional de Ciencia, Tecnología e Innovación, adscrito a la Presidencia del Consejo de Ministros (PCM).
+          </p>
+          <div class="space-y-1 text-slate-400">
+            <p>Sede: Av. Del Aire 485, San Borja, Lima</p>
+            <p>Atención: Lunes a Viernes de 8:30 a 16:30 hrs</p>
+          </div>
+        </div>
+
+        <!-- Columna 2: Portales de CTI -->
+        <div>
+          <h4 class="font-brand font-bold text-white uppercase tracking-wider mb-3">Portales CTI</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="https://servicio-renacyt.concytec.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:text-concytec-cyanVinc transition-colors">Renacyt & CTI Vitae</a></li>
+            <li><a href="https://prociencia.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:text-concytec-cyanVinc transition-colors">Portal Prociencia</a></li>
+            <li><a href="https://alicia.concytec.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:text-concytec-cyanVinc transition-colors">Repositorio ALICIA</a></li>
+            <li><a href="https://perucris.concytec.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:text-concytec-cyanVinc transition-colors">Plataforma PerúCRIS</a></li>
+            <li><a href="https://vinculate.concytec.gob.pe" target="_blank" rel="noopener noreferrer" class="hover:text-concytec-cyanVinc transition-colors">Vincúlate Concytec</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Transparencia y Políticas Reales -->
+        <div>
+          <h4 class="font-brand font-bold text-white uppercase tracking-wider mb-3">Transparencia y Legal</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="https://www.gob.pe/concytec" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Portal de Transparencia Estándar</a></li>
+            <li><button type="button" onclick="window.concytecApp.openLegalModal('privacidad')" class="hover:text-white transition-colors text-left">Protección de Datos (Ley 29733)</button></li>
+            <li><button type="button" onclick="window.concytecApp.openLegalModal('terminos')" class="hover:text-white transition-colors text-left">Términos y Condiciones de Uso</button></li>
+            <li><button type="button" onclick="window.concytecApp.openLegalModal('accesibilidad')" class="hover:text-white transition-colors text-left">Accesibilidad Digital (SGTD-PCM)</button></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Libro de Reclamaciones -->
+        <div>
+          <h4 class="font-brand font-bold text-white uppercase tracking-wider mb-3">Atención al Ciudadano</h4>
+          <a href="https://reclamos.servicios.gob.pe" target="_blank" rel="noopener noreferrer" class="block p-3.5 rounded-2xl bg-slate-900 border border-slate-700 hover:border-concytec-cyan transition-colors mb-2">
+            <span class="font-brand font-bold text-white block">Libro de Reclamaciones</span>
+            <span class="text-slate-400">Virtual del Estado Peruano</span>
+          </a>
+          <span class="text-slate-500 leading-tight block">Conforme al D.S. N° 007-2020-PCM.</span>
+        </div>
+
+      </div>
+
+      <!-- Barra de Copyright -->
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-slate-400 gap-3">
+        <div>
+          &copy; 2026 Consejo Nacional de Ciencia, Tecnología e Innovación (Concytec).
+        </div>
+        <div class="flex items-center gap-2">
+          <span>Plataforma Digital de Ciencia, Tecnología e Innovación</span>
+          <span>·</span>
+          <span>Presidencia del Consejo de Ministros (PCM)</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL DE DETALLE DE SERVICIO (FOCUS TRAP + ACCESIBILIDAD ARIA)            -->
+  <!-- ========================================================================= -->
+  <div 
+    id="serviceDetailModal" 
+    class="fixed inset-0 z-50 hidden overflow-y-auto" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modalServiceTitle" 
+    aria-describedby="modalServiceDescription"
+  >
+    <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" onclick="window.concytecApp.closeServiceModal()"></div>
+
+    <div class="flex min-h-full items-center justify-center p-4 text-center">
+      <div class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-slate-200">
+        
+        <!-- Header Modal -->
+        <div class="bg-gradient-to-r from-concytec-navy to-concytec-dark text-white p-6 relative">
+          <button 
+            type="button" 
+            onclick="window.concytecApp.closeServiceModal()" 
+            class="modal-close-btn absolute top-5 right-5 text-slate-300 hover:text-white p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors focus-visible:ring-2 focus-visible:ring-white"
+            aria-label="Cerrar modal"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+
+          <div class="flex items-center gap-2 mb-2">
+            <span id="modalCategoryBadge" class="px-3 py-0.5 rounded-full text-xs font-brand font-bold uppercase tracking-wider bg-concytec-cyan text-white">
+              Acreditación
+            </span>
+            <span id="modalStatusBadge" class="px-3 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              Ventanilla Permanente
+            </span>
+          </div>
+
+          <h3 id="modalServiceTitle" class="font-brand font-black text-xl sm:text-2xl text-white leading-tight mt-2">
+            Renacyt & CTI Vitae
+          </h3>
+          <p id="modalEntityManaging" class="text-xs sm:text-sm text-sky-200 mt-1 font-medium">
+            Dirección de Evaluación y Gestión del Conocimiento (DEGC) - Concytec
+          </p>
+        </div>
+
+        <!-- Contenido Estructurado -->
+        <div class="p-6 space-y-5 max-h-[60vh] overflow-y-auto text-xs sm:text-sm">
+          
+          <div>
+            <h4 class="font-brand font-bold text-xs uppercase tracking-wider text-slate-500 mb-1.5">
+              Descripción del Trámite
+            </h4>
+            <p id="modalServiceDescription" class="text-text-main leading-relaxed">
+              Registra tu hoja de vida científica y obtén o renueva tu calificación como investigador oficial del Perú.
+            </p>
+          </div>
+
+          <!-- Requisitos Previos Indispensables -->
+          <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <h4 class="font-brand font-bold text-xs uppercase tracking-wider text-slate-700 mb-2.5 flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Requisitos Previos Indispensables</span>
+            </h4>
+            <ul id="modalRequirementsList" class="space-y-2.5 text-slate-700">
+              <!-- Inyectado dinámicamente -->
+            </ul>
+          </div>
+
+          <!-- Metadatos Específicos -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-100">
+              <span class="block text-xs font-bold uppercase tracking-wider text-slate-500">Costo del Trámite</span>
+              <span id="modalCostInfo" class="text-xs font-bold text-concytec-navy">100% Gratuito</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-100">
+              <span class="block text-xs font-bold uppercase tracking-wider text-slate-500">Tiempo Estimado</span>
+              <span id="modalTimeInfo" class="text-xs font-bold text-concytec-navy">30 días hábiles</span>
+            </div>
+          </div>
+
+          <!-- Mesa de Ayuda Especializada -->
+          <div class="border-t border-slate-100 pt-3">
+            <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Mesa de Ayuda Especializada</span>
+            <p id="modalSupportInfo" class="text-slate-600 font-medium">
+              renacyt@concytec.gob.pe · Central: (01) 399-0030
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Footer Modal -->
+        <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-end gap-3">
+          <button 
+            type="button" 
+            onclick="window.concytecApp.closeServiceModal()" 
+            class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+          >
+            Cerrar
+          </button>
+          <a 
+            id="modalDirectAccessUrl" 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-concytec-navy hover:bg-concytec-dark text-white px-5 py-2.5 rounded-xl text-xs font-brand font-bold uppercase tracking-wider shadow-sm transition-all"
+          >
+            <span>Ir al Portal Oficial</span>
+            <svg class="w-4 h-4 text-concytec-cyanVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL DE AUTENTICACIÓN / LOGIN CON DNI                                    -->
+  <!-- ========================================================================= -->
+  <div 
+    id="loginModal" 
+    class="fixed inset-0 z-50 hidden overflow-y-auto" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="loginModalTitle"
+  >
+    <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" onclick="window.concytecApp.closeLoginModal()"></div>
+
+    <div class="flex min-h-full items-center justify-center p-4 text-center">
+      <div class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-md border border-slate-200">
+        
+        <div class="bg-concytec-navy p-6 text-white flex items-center justify-between">
+          <div>
+            <h3 id="loginModalTitle" class="font-brand font-bold text-lg text-white">Ingreso a Concytec Conecta</h3>
+            <p class="text-xs text-sky-200">Acceso seguro mediante DNI, CTI Vitae o GOB.PE</p>
+          </div>
+          <button 
+            type="button" 
+            onclick="window.concytecApp.closeLoginModal()" 
+            class="modal-close-btn text-slate-300 hover:text-white p-1 rounded-lg"
+            aria-label="Cerrar ventana"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <form onsubmit="window.concytecApp.handleRealLogin(event)" class="p-6 space-y-4">
+          
+          <div>
+            <label for="loginDocType" class="block text-xs font-semibold text-slate-700 mb-1">Tipo de Documento</label>
+            <select id="loginDocType" class="w-full text-xs p-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-concytec-cyan">
+              <option value="DNI">DNI - Documento Nacional de Identidad</option>
+              <option value="CE">Carné de Extranjería</option>
+              <option value="PAS">Pasaporte</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="loginDocNum" class="block text-xs font-semibold text-slate-700 mb-1">Número de Documento</label>
+            <input 
+              type="text" 
+              id="loginDocNum" 
+              required
+              maxlength="12"
+              placeholder="Ej. 10293847" 
+              class="w-full text-xs p-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-concytec-cyan"
+            >
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label for="loginPassword" class="block text-xs font-semibold text-slate-700">Contraseña CTI Vitae</label>
+              <a href="https://servicio-renacyt.concytec.gob.pe" target="_blank" class="text-xs text-concytec-cyan hover:underline">¿Olvidaste tu clave?</a>
+            </div>
+            <input 
+              type="password" 
+              id="loginPassword" 
+              required
+              placeholder="Ingresa tu clave de acceso" 
+              class="w-full text-xs p-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-concytec-cyan"
+            >
+          </div>
+
+          <!-- Consentimiento Ley 29733 -->
+          <div class="flex items-start gap-2 pt-1">
+            <input type="checkbox" id="loginConsent" required class="mt-0.5 rounded text-concytec-cyan">
+            <label for="loginConsent" class="text-xs text-slate-600 leading-tight">
+              Acepto el tratamiento de mis datos personales para autenticación en la Ventanilla Única CTI conforme a la <button type="button" onclick="window.concytecApp.openLegalModal('privacidad')" class="text-concytec-cyan underline">Ley N° 29733</button>.
+            </label>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3 rounded-xl bg-concytec-navy hover:bg-concytec-dark text-white font-brand font-bold text-xs uppercase tracking-wider transition-all shadow-md active:scale-95"
+          >
+            Iniciar Sesión
+          </button>
+
+          <div class="relative flex py-1 items-center">
+            <div class="flex-grow border-t border-slate-200"></div>
+            <span class="flex-shrink mx-2 text-xs text-slate-500 uppercase font-semibold">o también</span>
+            <div class="flex-grow border-t border-slate-200"></div>
+          </div>
+
+          <button 
+            type="button" 
+            onclick="window.concytecApp.handleRealLogin(event, 'Clave Única GOB.PE')"
+            class="w-full py-2.5 px-3 rounded-xl border border-gob-red text-gob-red hover:bg-red-50 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+          >
+            <span class="w-2 h-2 rounded-full bg-gob-red"></span>
+            <span>Ingresar con Clave Única del Estado Peruano</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL DE PÁGINAS LEGALES REALES (PRIVACIDAD, TÉRMINOS, ACCESIBILIDAD)     -->
+  <!-- ========================================================================= -->
+  <div 
+    id="legalModal" 
+    class="fixed inset-0 z-50 hidden overflow-y-auto" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="legalModalTitle"
+  >
+    <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" onclick="window.concytecApp.closeLegalModal()"></div>
+
+    <div class="flex min-h-full items-center justify-center p-4 text-center">
+      <div class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-slate-200">
+        
+        <div class="bg-concytec-navy p-5 text-white flex items-center justify-between">
+          <h3 id="legalModalTitle" class="font-brand font-bold text-base text-white">Información Legal</h3>
+          <button type="button" onclick="window.concytecApp.closeLegalModal()" class="modal-close-btn text-slate-300 hover:text-white p-1 rounded-lg" aria-label="Cerrar">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div id="legalModalBody" class="p-6 text-xs sm:text-sm text-slate-700 space-y-3.5 max-h-[65vh] overflow-y-auto">
+          <!-- Inyectado dinámicamente -->
+        </div>
+
+        <div class="bg-slate-50 px-6 py-3.5 border-t border-slate-100 flex justify-end">
+          <button type="button" onclick="window.concytecApp.closeLegalModal()" class="px-5 py-2 rounded-xl bg-concytec-navy text-white text-xs font-semibold">
+            Entendido y cerrar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- ASISTENTE GUIADO ("¿QUÉ TRÁMITE BUSCAS HOY?")                             -->
+  <!-- ========================================================================= -->
+  <div 
+    id="wizardModal" 
+    class="fixed inset-0 z-50 hidden overflow-y-auto" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="wizardTitle"
+  >
+    <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" onclick="window.concytecApp.closeWizardModal()"></div>
+
+    <div class="flex min-h-full items-center justify-center p-4 text-center">
+      <div class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-xl border border-slate-200">
+        
+        <div class="bg-concytec-navy p-5 text-white flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-concytec-cyanVinc flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <h3 id="wizardTitle" class="font-brand font-bold text-base text-white">Asistente Guiado de CTI</h3>
+              <p class="text-xs text-sky-200">Encuentra tu trámite en 3 pasos</p>
+            </div>
+          </div>
+          <button type="button" onclick="window.concytecApp.closeWizardModal()" class="modal-close-btn text-slate-300 hover:text-white p-1 rounded-lg" aria-label="Cerrar asistente">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="p-6">
+          <div id="wizardStep1" class="space-y-3">
+            <span class="text-xs font-bold text-concytec-cyan uppercase tracking-wider block">Paso 1 de 3</span>
+            <h4 class="font-brand font-bold text-base text-text-main">¿Cuál es tu rol o perfil principal?</h4>
+            <div class="grid grid-cols-2 gap-2.5 pt-2">
+              <button type="button" onclick="window.concytecApp.wizardSelect('role', 'Investigador')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">👨‍🔬 Investigador(a)</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('role', 'Empresa')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">🏢 Empresa / Negocio</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('role', 'Universidad')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">🏛️ Universidad / Centro</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('role', 'Docente / Estudiante')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">🎓 Estudiante / Colegio</button>
+            </div>
+          </div>
+
+          <div id="wizardStep2" class="hidden space-y-3">
+            <span class="text-xs font-bold text-concytec-cyan uppercase tracking-wider block">Paso 2 de 3</span>
+            <h4 class="font-brand font-bold text-base text-text-main">¿Qué objetivo tienes en mente?</h4>
+            <div class="grid grid-cols-1 gap-2 pt-2">
+              <button type="button" onclick="window.concytecApp.wizardSelect('need', 'fondos')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">💰 Subvenciones y financiamiento para proyectos</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('need', 'acreditacion')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">🎖️ Calificación como investigador oficial Renacyt</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('need', 'tributario')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">📉 Deducción en Impuesto a la Renta (Ley 30309)</button>
+              <button type="button" onclick="window.concytecApp.wizardSelect('need', 'tesis')" class="p-3.5 text-left border-2 rounded-2xl hover:border-concytec-cyan hover:bg-sky-50 text-xs font-bold transition-all">📖 Descargar tesis universitarias y artículos ALICIA</button>
+            </div>
+          </div>
+
+          <div id="wizardResult" class="hidden space-y-4 text-center py-4">
+            <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full mx-auto flex items-center justify-center border-2 border-emerald-300">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Trámite Recomendado:</span>
+              <h4 id="wizardResultTitle" class="font-brand font-black text-xl text-concytec-navy mt-1">Renacyt & CTI Vitae</h4>
+              <p id="wizardResultDesc" class="text-xs text-text-secondary mt-1">Obtén tu calificación como investigador oficial del Perú.</p>
+            </div>
+            <div class="pt-2 flex justify-center gap-2">
+              <button type="button" id="wizardResultBtn" class="bg-concytec-navy text-white px-5 py-2.5 rounded-xl text-xs font-bold">Ver requisitos y detalles</button>
+              <button type="button" onclick="window.concytecApp.resetWizard()" class="border px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600">Volver a empezar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT MODULAR Y REACTIVO                                            -->
+  <!-- ========================================================================= -->
+  <script>
+    /**
+     * CONCYTEC CONECTA - VENTANILLA ÚNICA DIGITAL
+     * Versión Enriquecida con Iconografía Dinámica y Experiencia UX Fluida
+     */
+
+    // MAPA DE ICONOS VECTORIALES SVGs PARA CADA SERVICIO
+    const SERVICE_ICONS = {
+      "renacyt": `<svg class="w-6 h-6 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+      "prociencia": `<svg class="w-6 h-6 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>`,
+      "alicia": `<svg class="w-6 h-6 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+      "biblioteca-virtual": `<svg class="w-6 h-6 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+      "beneficios-tributarios": `<svg class="w-6 h-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
+      "vinculate": `<svg class="w-6 h-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+      "perucris": `<svg class="w-6 h-6 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+      "octi": `<svg class="w-6 h-6 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+      "sigeccyt": `<svg class="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+      "capacitate": `<svg class="w-6 h-6 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`
+    };
+
+    // 1. DATASET OFICIAL DE LOS 10 SERVICIOS DEL ECOSISTEMA CTI
+    const CONCYTEC_SERVICES = [
+      {
+        id: "renacyt",
+        title: "Renacyt & CTI Vitae",
+        category: "Acreditación",
+        roles: ["Investigador"],
+        managingEntity: "Dirección de Evaluación y Gestión del Conocimiento (DEGC) - Concytec",
+        description: "Registra tu hoja de vida científica y obtén o renueva tu calificación como investigador oficial del Perú.",
+        url: "https://servicio-renacyt.concytec.gob.pe",
+        statusBadge: "Ventanilla permanente",
+        statusType: "permanent",
+        cost: "100% Gratuito (Ley N° 31250)",
+        estimatedTime: "30 días hábiles de evaluación",
+        requirements: [
+          "DNI vigente, Carné de Extranjería o Pasaporte verificado ante RENIEC / Migraciones.",
+          "Filiación institucional académica o centro de investigación declarado.",
+          "Haber publicado artículos en revistas indexadas (Scopus, Web of Science, SciELO) o patentes concedidas.",
+          "Grado académico registrado ante SUNEDU o revalidación con resolución apostillada."
+        ],
+        supportEmail: "renacyt@concytec.gob.pe",
+        supportPhone: "(01) 399-0030 (Central Telefónica)",
+        keywords: ["renacyt", "cti vitae", "dina", "investigador", "calificacion", "constancia", "evaluacion", "curriculum", "acreditacion"]
+      },
+      {
+        id: "prociencia",
+        title: "Prociencia: Fondos Concursables y Becas",
+        category: "Fondos y Becas",
+        roles: ["Investigador", "Universidad"],
+        managingEntity: "Programa Nacional de Investigación Científica y Estudios Avanzados (PROCIENCIA)",
+        description: "Subvenciones financieras no reembolsables para proyectos de investigación aplicada, pasantías y becas de posgrado.",
+        url: "https://prociencia.gob.pe/convocatorias/",
+        statusBadge: "Convocatorias activas",
+        statusType: "grant",
+        cost: "Gratuito para postulación (Requiere contrapartida)",
+        estimatedTime: "Según cronograma oficial",
+        requirements: [
+          "Estar adscrito a una universidad licenciada, instituto público de investigación o centro de CTI.",
+          "Investigador principal activo y calificado en el Registro Renacyt.",
+          "Carta de compromiso institucional y propuesta técnica con presupuesto detallado.",
+          "Postulación virtual mediante el Sistema de Gestión de Convocatorias de Prociencia."
+        ],
+        supportEmail: "contacto@prociencia.gob.pe",
+        supportPhone: "(01) 644-0004",
+        keywords: ["prociencia", "fondos", "becas", "subvenciones", "financiamiento", "concurso", "proyectos", "fondecyt"]
+      },
+      {
+        id: "alicia",
+        title: "ALICIA: Repositorio Nacional Digital",
+        category: "Literatura y Datos",
+        roles: ["Todos"],
+        managingEntity: "Dirección de Políticas y Programas de CTI - Concytec",
+        description: "Más de 500,000 tesis universitarias, artículos científicos y patentes peruanas disponibles en acceso abierto.",
+        url: "https://alicia.concytec.gob.pe",
+        statusBadge: "Acceso libre 24/7",
+        statusType: "open",
+        cost: "100% Gratuito y de libre acceso",
+        estimatedTime: "Descarga inmediata sin registro previo",
+        requirements: [
+          "Acceso libre, irrestricto y gratuito para toda la ciudadanía.",
+          "No requiere inicio de sesión para consulta ni descarga de textos completos en PDF.",
+          "Para universidades depositarias: poseer un repositorio institucional compatible con protocolo OAI-PMH."
+        ],
+        supportEmail: "alicia@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["alicia", "tesis", "articulos", "repositorio", "descargas", "pdf", "open access", "libros", "investigacion", "literatura"]
+      },
+      {
+        id: "biblioteca-virtual",
+        title: "Biblioteca Virtual de CTI",
+        category: "Literatura y Datos",
+        roles: ["Investigador"],
+        managingEntity: "Red Nacional de Información Científica - Concytec",
+        description: "Consulta a texto completo en Scopus, ScienceDirect, IEEE y bases científicas internacionales suscritas por Concytec.",
+        url: "https://biblioteca.concytec.gob.pe",
+        statusBadge: "Acceso por acreditación",
+        statusType: "restricted",
+        cost: "Gratuito para investigadores calificados",
+        estimatedTime: "Acceso remoto inmediato",
+        requirements: [
+          "Calificación activa y vigente en el Registro Renacyt.",
+          "Inicio de sesión mediante credenciales de CTI Vitae.",
+          "Uso exclusivo para fines de investigación académica y no comercial."
+        ],
+        supportEmail: "bibliotecavirtual@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["biblioteca", "scopus", "sciencedirect", "ieee", "bases de datos", "revistas", "papers", "articulos cientificos"]
+      },
+      {
+        id: "beneficios-tributarios",
+        title: "Beneficios Tributarios en I+D+i (Ley N° 30309)",
+        category: "Empresas e Innovación",
+        roles: ["Empresa"],
+        managingEntity: "Subdirección de Innovación y Transferencia Tecnológica - Concytec",
+        description: "Deducción tributaria adicional de hasta 240% (150%, 175% o 240% según tamaño de empresa) en el Impuesto a la Renta.",
+        url: "https://portal.concytec.gob.pe/index.php/servicios/beneficios-tributarios-en-i-d-i",
+        statusBadge: "Ventanilla anual",
+        statusType: "permanent",
+        cost: "Trámite gratuito ante Concytec",
+        estimatedTime: "30 a 45 días hábiles",
+        requirements: [
+          "Empresa domiciliada en el Perú con RUC activo y condición de habido ante SUNAT.",
+          "Proyecto de I+D+i formulado con objetivos, cronograma e impacto técnico.",
+          "Centro de I+D propio o entidad externa autorizada por Concytec.",
+          "Presentación de la solicitud antes del inicio del ejercicio fiscal a declarar."
+        ],
+        supportEmail: "beneficiostributarios@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["ley 30309", "beneficio tributario", "impuesto a la renta", "empresas", "deduccion", "i+d+i", "sunat", "innovacion"]
+      },
+      {
+        id: "vinculate",
+        title: "Vincúlate & Catálogo Asóciate",
+        category: "Empresas e Innovación",
+        roles: ["Empresa", "Universidad"],
+        managingEntity: "Dirección de Políticas y Programas de CTI - Concytec",
+        description: "Plataforma de articulación academia-industria, nivel de madurez TRL y catálogo de tecnologías listas para licenciamiento.",
+        url: "https://vinculate.concytec.gob.pe",
+        statusBadge: "Catálogo permanente",
+        statusType: "permanent",
+        cost: "Acceso y registro 100% gratuito",
+        estimatedTime: "Inmediato para búsqueda",
+        requirements: [
+          "Para inventores y universidades: tecnologías con madurez TRL 4 o superior con solicitud de patente.",
+          "Para empresas: búsqueda abierta y contacto directo para convenios de I+D.",
+          "Validación previa por Oficina de Transferencia Tecnológica (OTT) universitaria."
+        ],
+        supportEmail: "vinculate@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["vinculate", "transferencia tecnologica", "patentes", "asociate", "trl", "licenciamiento", "spin-off", "prototipos"]
+      },
+      {
+        id: "perucris",
+        title: "Plataforma #PerúCRIS",
+        category: "Infraestructura",
+        roles: ["Universidad", "Investigador"],
+        managingEntity: "Dirección de Sistemas de Información y Comunicación del CTI",
+        description: "Directorio unificado de infraestructura científica, laboratorios acreditados y equipamiento mayor en el país.",
+        url: "https://perucris.concytec.gob.pe",
+        statusBadge: "Directorio activo",
+        statusType: "open",
+        cost: "100% Gratuito",
+        estimatedTime: "Consulta pública inmediata",
+        requirements: [
+          "Institución integrante del Sistema Nacional de CTI (SINACTI).",
+          "Inventario institucional de equipamiento científico mayor y servicios de ensayo.",
+          "Adhesión técnica a los estándares de interoperabilidad nacional de Concytec."
+        ],
+        supportEmail: "perucris@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["perucris", "cris", "laboratorios", "infraestructura", "equipos", "microscopio", "red nacional", "sinacti"]
+      },
+      {
+        id: "octi",
+        title: "OCTI: Observatorio de Ciencia y Tecnología",
+        category: "Literatura y Datos",
+        roles: ["Investigador", "Empresa"],
+        managingEntity: "Observatorio de Ciencia, Tecnología e Innovación - Concytec",
+        description: "Tableros de inteligencia, estadísticas oficiales, vigilancia tecnológica y prospectiva para toma de decisiones.",
+        url: "https://octi.concytec.gob.pe",
+        statusBadge: "Datos abiertos",
+        statusType: "open",
+        cost: "100% Gratuito",
+        estimatedTime: "Acceso libre a dashboards",
+        requirements: [
+          "Acceso libre a tableros e indicadores de I+D+i sin requerir clave.",
+          "Para descarga de microdatos y encuestas: solicitud justificada académica."
+        ],
+        supportEmail: "octi@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["octi", "observatorio", "estadisticas", "indicadores", "vigilancia tecnologica", "datos abiertos", "encuestas", "datos"]
+      },
+      {
+        id: "sigeccyt",
+        title: "Clubes de Ciencia y Tecnología (SIGECCYT)",
+        category: "Formación y Semilleros",
+        roles: ["Docente / Estudiante"],
+        managingEntity: "Dirección de Políticas y Programas de CTI / Educación STEAM",
+        description: "Acreditación oficial de semilleros escolares STEAM en colegios públicos y privados para la Feria Escolar Eureka.",
+        url: "https://clubescyt.concytec.gob.pe",
+        statusBadge: "Inscripciones abiertas",
+        statusType: "permanent",
+        cost: "100% Gratuito para colegios",
+        estimatedTime: "Aprobación de ficha en 7 días",
+        requirements: [
+          "Institución Educativa de Educación Básica Regular (EBR) con código modular oficial ante MINEDU.",
+          "Docente asesor designado con resolución directoral de la escuela.",
+          "Padrón activo de mínimo 5 estudiantes integrantes en primaria o secundaria."
+        ],
+        supportEmail: "clubescyt@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["clubes", "sigeccyt", "eureka", "colegios", "docentes", "estudiantes", "steam", "escolar", "feria escolar", "semilleros"]
+      },
+      {
+        id: "capacitate",
+        title: "Capacítate Concytec: Campus Virtual",
+        category: "Formación y Semilleros",
+        roles: ["Todos"],
+        managingEntity: "Subdirección de Gestión del Conocimiento - Concytec",
+        description: "Cursos virtuales gratuitos autogestionados en integridad científica, patentes, redacción y formulación de proyectos.",
+        url: "https://capacitate.concytec.gob.pe/",
+        statusBadge: "Cursos disponibles",
+        statusType: "open",
+        cost: "100% Gratuito con certificación",
+        estimatedTime: "Acceso inmediato al registrarse",
+        requirements: [
+          "DNI, Carné de Extranjería o Pasaporte vigente.",
+          "Cuenta de correo personal activa para el Campus Virtual.",
+          "Completar módulos y evaluación mínima aprobatoria de 14/20 para emitir constancia."
+        ],
+        supportEmail: "capacitacion@concytec.gob.pe",
+        supportPhone: "(01) 399-0030",
+        keywords: ["capacitate", "cursos", "virtual", "integridad cientifica", "patentes", "certificacion", "gratuito", "aulavirtual", "formacion"]
+      }
+    ];
+
+    // 2. DATASET DE CONVOCATORIAS DINÁMICAS
+    const CONCYTEC_GRANTS = [
+      {
+        id: "conv-01",
+        title: "Proyectos de Investigación Aplicada Multidisciplinarios 2026-I",
+        beneficiaryRole: "Universidad / Centros I+D",
+        description: "Subvención financiera para proyectos colaborativos de ciencia y tecnología con impacto productivo.",
+        grantAmount: "Hasta S/ 350,000 por proyecto",
+        closingDate: "2026-11-20",
+        basesUrl: "https://prociencia.gob.pe/convocatorias/"
+      },
+      {
+        id: "conv-02",
+        title: "Becas Doctorales en Alianzas Interinstitucionales",
+        beneficiaryRole: "Investigador / Docente",
+        description: "Financiamiento integral de aranceles académicos y manutención mensual para doctorados acreditados.",
+        grantAmount: "Cobertura 100% pensión + estipendio",
+        closingDate: "2026-12-15",
+        basesUrl: "https://prociencia.gob.pe/convocatorias/"
+      },
+      {
+        id: "conv-03",
+        title: "Validación y Empaquetamiento Tecnológico para Mercado",
+        beneficiaryRole: "Empresa + Centro I+D",
+        description: "Fondos de escalamiento para madurar tecnologías de TRL 4 a TRL 7 y facilitar su adopción comercial.",
+        grantAmount: "Hasta S/ 250,000 no reembolsable",
+        closingDate: "2026-12-30",
+        basesUrl: "https://prociencia.gob.pe/convocatorias/"
+      }
+    ];
+
+    // 3. TEXTOS LEGALES REALES
+    const LEGAL_TEXTS = {
+      privacidad: {
+        title: "Política de Privacidad y Tratamiento de Datos Personales",
+        body: `
+          <p><strong>Conforme a la Ley N° 29733 (Ley de Protección de Datos Personales del Perú) y su Reglamento:</strong></p>
+          <p>El Consejo Nacional de Ciencia, Tecnología e Innovación (Concytec), en su calidad de titular de bancos de datos personales, informa a los usuarios que los datos recopilados mediante la Ventanilla Única Digital "Concytec Conecta" son utilizados exclusivamente con fines de:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Autenticación e identificación del ciudadano ante el Sistema Nacional de CTI.</li>
+            <li>Gestión de trámites en Renacyt, Prociencia y Mesa de Partes Digital.</li>
+            <li>Comunicaciones oficiales sobre convocatorias, estados de expedientes y capacitaciones.</li>
+          </ul>
+          <p class="mt-2">Usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO) dirigiendo una solicitud virtual a <a href="mailto:mesadepartes@concytec.gob.pe" class="text-concytec-cyan underline font-semibold">mesadepartes@concytec.gob.pe</a>.</p>
+        `
+      },
+      terminos: {
+        title: "Términos y Condiciones de Uso de la Ventanilla Única",
+        body: `
+          <p><strong>Normativa de Gobierno y Transformación Digital (D.S. N° 029-2021-PCM):</strong></p>
+          <p>El acceso y uso de "Concytec Conecta" implica la aceptación plena de los presentes términos:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Veracidad de la información:</strong> El usuario declara bajo juramento que toda la documentación y datos ingresados son fidedignos y de su titularidad.</li>
+            <li><strong>Gratuidad:</strong> El acceso a la plataforma es totalmente gratuito y está protegido bajo las leyes de interoperabilidad estatal.</li>
+            <li><strong>Disponibilidad:</strong> Concytec garantiza la operación continua del servicio 24 horas al día, los 7 días de la semana, salvo mantenimientos programados informados previamente.</li>
+          </ul>
+        `
+      },
+      accesibilidad: {
+        title: "Declaración de Accesibilidad Digital del Estado Peruano",
+        body: `
+          <p><strong>Conforme a las Directivas de la Secretaría de Gobierno y Transformación Digital (SGTD - PCM):</strong></p>
+          <p>Esta plataforma ha sido desarrollada siguiendo las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1 en su nivel de conformidad AA:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Navegación por teclado completa:</strong> Todos los elementos interactivos, buscadores y modales son operables mediante la tecla Tab, flechas direccionales y Escape.</li>
+            <li><strong>Compatibilidad con lectores de pantalla:</strong> Estructura semántica HTML5 con roles ARIA (combobox, listbox, dialog) y descripciones textuales.</li>
+            <li><strong>Contraste cromático suficiente:</strong> Ratios de contraste superiores a 4.5:1 para texto normal y soporte para 'prefers-reduced-motion'.</li>
+          </ul>
+        `
+      }
+    };
+
+    // 4. CLASE CONTROLADORA PRINCIPAL DE LA APLICACIÓN
+    class ConcytecConectaApp {
+      constructor() {
+        this.services = CONCYTEC_SERVICES;
+        this.grants = CONCYTEC_GRANTS;
+        this.lastFocusedElement = null;
+        this.wizardState = { role: null, need: null };
+        this.activeComboboxIndex = -1;
+
+        this.state = this.readStateFromURL();
+
+        this.initDOMElements();
+        this.initEventListeners();
+        this.applyStateToUI();
+        this.renderServices();
+        this.renderGrants();
+        this.updateCounters();
+      }
+
+      readStateFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+          searchQuery: params.get("q") || "",
+          selectedRole: params.get("rol") || "Todos",
+          selectedCategory: params.get("cat") || "Todos",
+          userLoggedIn: false,
+          userName: ""
+        };
+      }
+
+      syncStateToURL() {
+        const params = new URLSearchParams();
+        if (this.state.searchQuery) params.set("q", this.state.searchQuery);
+        if (this.state.selectedRole !== "Todos") params.set("rol", this.state.selectedRole);
+        if (this.state.selectedCategory !== "Todos") params.set("cat", this.state.selectedCategory);
+
+        const newUrl = window.location.pathname + (params.toString() ? "?" + params.toString() : "") + window.location.hash;
+        window.history.replaceState(null, "", newUrl);
+      }
+
+      initDOMElements() {
+        this.servicesGrid = document.getElementById("servicesGrid");
+        this.emptyState = document.getElementById("emptyState");
+        this.serviceCounterBadge = document.getElementById("serviceCounterBadge");
+        this.btnResetAllFilters = document.getElementById("btnResetAllFilters");
+        this.smartSearchInput = document.getElementById("smartSearchInput");
+        this.clearSearchBtn = document.getElementById("clearSearchBtn");
+        this.predictiveDropdown = document.getElementById("predictiveDropdown");
+        this.predictiveResultsList = document.getElementById("predictiveResultsList");
+        this.predictiveResultsCount = document.getElementById("predictiveResultsCount");
+
+        // Modales
+        this.serviceDetailModal = document.getElementById("serviceDetailModal");
+        this.loginModal = document.getElementById("loginModal");
+        this.legalModal = document.getElementById("legalModal");
+        this.wizardModal = document.getElementById("wizardModal");
+        this.mobileMenu = document.getElementById("mobileMenu");
+        this.mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      }
+
+      initEventListeners() {
+        this.smartSearchInput.addEventListener("input", (e) => {
+          this.state.searchQuery = e.target.value.trim();
+          this.handleSearchInput(this.state.searchQuery);
+        });
+
+        this.smartSearchInput.addEventListener("keydown", (e) => {
+          this.handleComboboxKeydown(e);
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!this.smartSearchInput.contains(e.target) && !this.predictiveDropdown.contains(e.target)) {
+            this.hidePredictiveDropdown();
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            this.closeAllModals();
+            this.hidePredictiveDropdown();
+          }
+        });
+
+        window.addEventListener("popstate", () => {
+          this.state = this.readStateFromURL();
+          this.applyStateToUI();
+          this.renderServices();
+          this.updateCounters();
+        });
+      }
+
+      applyStateToUI() {
+        if (this.state.searchQuery) {
+          this.smartSearchInput.value = this.state.searchQuery;
+          this.clearSearchBtn.classList.remove("hidden");
+        }
+        this.updateRoleUI();
+        this.updateCategoryUI();
+      }
+
+      normalize(str) {
+        return (str || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+      }
+
+      matchesService(service, query, role, category) {
+        if (role && role !== "Todos") {
+          const roleMatch = service.roles.includes("Todos") || service.roles.includes(role);
+          if (!roleMatch) return false;
+        }
+
+        if (category && category !== "Todos") {
+          if (service.category !== category) return false;
+        }
+
+        if (query) {
+          const qNorm = this.normalize(query);
+          const titleNorm = this.normalize(service.title);
+          const descNorm = this.normalize(service.description);
+          const catNorm = this.normalize(service.category);
+          const entityNorm = this.normalize(service.managingEntity);
+          const kwNorm = service.keywords.some(k => this.normalize(k).includes(qNorm));
+
+          const textMatch = titleNorm.includes(qNorm) || descNorm.includes(qNorm) || catNorm.includes(qNorm) || entityNorm.includes(qNorm) || kwNorm;
+          if (!textMatch) return false;
+        }
+
+        return true;
+      }
+
+      highlightMatch(text, query) {
+        if (!query) return this.escapeHtml(text);
+
+        const charMap = {
+          'a': '[aáàäâ]',
+          'e': '[eéèëê]',
+          'i': '[iíìïî]',
+          'o': '[oóòöô]',
+          'u': '[uúùüû]',
+          'n': '[nñ]'
+        };
+
+        const pattern = this.normalize(query)
+          .split('')
+          .map(ch => charMap[ch] || ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+          .join('');
+
+        const regex = new RegExp(`(${pattern})`, 'gi');
+        return this.escapeHtml(text).replace(regex, `<mark class="highlight">$1</mark>`);
+      }
+
+      handleSearchInput(query) {
+        if (query.length > 0) {
+          this.clearSearchBtn.classList.remove("hidden");
+        } else {
+          this.clearSearchBtn.classList.add("hidden");
+        }
+
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+
+        if (query.length >= 2) {
+          const matches = this.services.filter(s => this.matchesService(s, query, null, null));
+          this.renderPredictiveDropdown(matches, query);
+        } else {
+          this.hidePredictiveDropdown();
+        }
+      }
+
+      renderPredictiveDropdown(matches, query) {
+        this.activeComboboxIndex = -1;
+        this.smartSearchInput.setAttribute("aria-expanded", "true");
+
+        if (matches.length === 0) {
+          this.predictiveResultsList.innerHTML = `
+            <li class="p-4 text-center text-xs text-slate-500">
+              No se encontraron trámites para "<strong>${this.escapeHtml(query)}</strong>"
+            </li>
+          `;
+          this.predictiveResultsCount.textContent = "0 resultados";
+        } else {
+          this.predictiveResultsCount.textContent = `${matches.length} servicios encontrados`;
+          this.predictiveResultsList.innerHTML = matches.slice(0, 5).map((service, idx) => `
+            <li 
+              id="combobox-opt-${idx}"
+              role="option" 
+              aria-selected="false"
+              class="combobox-option p-3.5 hover:bg-sky-50 focus:bg-sky-100 cursor-pointer transition-colors flex items-center justify-between group"
+              onclick="window.concytecApp.openServiceModal('${service.id}'); window.concytecApp.hidePredictiveDropdown();"
+            >
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-sky-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  ${SERVICE_ICONS[service.id] || `<svg class="w-5 h-5 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>`}
+                </div>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold text-concytec-navy group-hover:text-concytec-cyan transition-colors">
+                    ${this.highlightMatch(service.title, query)}
+                  </div>
+                  <div class="text-xs text-text-secondary truncate max-w-xs sm:max-w-md">
+                    ${service.category} · ${service.managingEntity}
+                  </div>
+                </div>
+              </div>
+              <span class="text-xs text-concytec-cyan font-bold flex items-center gap-1 flex-shrink-0">
+                <span>Ver</span>
+                <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </li>
+          `).join("");
+        }
+
+        this.predictiveDropdown.classList.remove("hidden");
+      }
+
+      hidePredictiveDropdown() {
+        this.predictiveDropdown.classList.add("hidden");
+        this.smartSearchInput.setAttribute("aria-expanded", "false");
+        this.smartSearchInput.removeAttribute("aria-activedescendant");
+        this.activeComboboxIndex = -1;
+      }
+
+      handleComboboxKeydown(e) {
+        const options = this.predictiveResultsList.querySelectorAll(".combobox-option");
+        if (options.length === 0 || this.predictiveDropdown.classList.contains("hidden")) return;
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          this.activeComboboxIndex = (this.activeComboboxIndex + 1) % options.length;
+          this.updateComboboxActiveItem(options);
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          this.activeComboboxIndex = (this.activeComboboxIndex - 1 + options.length) % options.length;
+          this.updateComboboxActiveItem(options);
+        } else if (e.key === "Enter" && this.activeComboboxIndex >= 0) {
+          e.preventDefault();
+          options[this.activeComboboxIndex].click();
+        }
+      }
+
+      updateComboboxActiveItem(options) {
+        options.forEach((opt, idx) => {
+          if (idx === this.activeComboboxIndex) {
+            opt.classList.add("bg-sky-100");
+            opt.setAttribute("aria-selected", "true");
+            this.smartSearchInput.setAttribute("aria-activedescendant", opt.id);
+            opt.scrollIntoView({ block: "nearest" });
+          } else {
+            opt.classList.remove("bg-sky-100");
+            opt.setAttribute("aria-selected", "false");
+          }
+        });
+      }
+
+      clearSearch() {
+        this.state.searchQuery = "";
+        this.smartSearchInput.value = "";
+        this.clearSearchBtn.classList.add("hidden");
+        this.hidePredictiveDropdown();
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+        this.smartSearchInput.focus();
+      }
+
+      applyQuickQuery(query) {
+        this.state.searchQuery = query;
+        this.smartSearchInput.value = query;
+        this.clearSearchBtn.classList.remove("hidden");
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+        document.getElementById("directorio").scrollIntoView({ behavior: "smooth" });
+      }
+
+      triggerSearchSubmit() {
+        this.hidePredictiveDropdown();
+        this.syncStateToURL();
+        document.getElementById("directorio").scrollIntoView({ behavior: "smooth" });
+      }
+
+      // 5. FILTRADO POR ROL
+      setRoleFilter(role) {
+        this.state.selectedRole = role;
+        this.updateRoleUI();
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+
+        if (role !== "Todos") {
+          document.getElementById("directorio").scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      updateRoleUI() {
+        // Actualizar tarjetas de perfil grandes
+        document.querySelectorAll(".profile-card").forEach(card => {
+          card.classList.remove("border-concytec-cyan", "border-concytec-orangeVinc", "border-emerald-500", "border-purple-500", "ring-2", "ring-concytec-cyan/20", "bg-white", "shadow-card-hover");
+          card.classList.add("border-slate-200", "bg-slate-50");
+          card.setAttribute("aria-pressed", "false");
+        });
+
+        const activeCard = document.getElementById(`profileCard-${this.state.selectedRole}`);
+        if (activeCard) {
+          activeCard.classList.remove("border-slate-200", "bg-slate-50");
+          activeCard.classList.add("border-concytec-cyan", "ring-2", "ring-concytec-cyan/20", "bg-white", "shadow-card-hover");
+          activeCard.setAttribute("aria-pressed", "true");
+        }
+
+        // Actualizar badge de rol activo
+        const notice = document.getElementById("roleNoticeBadge");
+        const noticeLabel = document.getElementById("roleNoticeLabel");
+        if (this.state.selectedRole !== "Todos") {
+          notice.classList.remove("hidden");
+          noticeLabel.textContent = this.state.selectedRole;
+        } else {
+          notice.classList.add("hidden");
+        }
+      }
+
+      setCategoryFilter(category) {
+        this.state.selectedCategory = category;
+        this.updateCategoryUI();
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+      }
+
+      updateCategoryUI() {
+        document.querySelectorAll(".category-chip").forEach(chip => {
+          chip.classList.remove("bg-concytec-navy", "text-white", "shadow-sm");
+          chip.classList.add("bg-slate-100", "text-slate-700");
+          chip.setAttribute("aria-pressed", "false");
+        });
+
+        const activeChip = document.getElementById(`catChip-${this.state.selectedCategory}`);
+        if (activeChip) {
+          activeChip.classList.remove("bg-slate-100", "text-slate-700");
+          activeChip.classList.add("bg-concytec-navy", "text-white", "shadow-sm");
+          activeChip.setAttribute("aria-pressed", "true");
+        }
+      }
+
+      resetFilters() {
+        this.state.searchQuery = "";
+        this.state.selectedRole = "Todos";
+        this.state.selectedCategory = "Todos";
+        this.smartSearchInput.value = "";
+        this.clearSearchBtn.classList.add("hidden");
+        this.hidePredictiveDropdown();
+
+        this.updateRoleUI();
+        this.updateCategoryUI();
+        this.syncStateToURL();
+        this.renderServices();
+        this.updateCounters();
+      }
+
+      // 6. RENDERIZADO DEL CATÁLOGO DE TARJETAS CON ALTO DINAMISMO
+      getFilteredServices() {
+        return this.services.filter(service => 
+          this.matchesService(service, this.state.searchQuery, this.state.selectedRole, this.state.selectedCategory)
+        );
+      }
+
+      renderServices() {
+        const filtered = this.getFilteredServices();
+
+        if (filtered.length === 0) {
+          this.servicesGrid.innerHTML = "";
+          this.emptyState.classList.remove("hidden");
+        } else {
+          this.emptyState.classList.add("hidden");
+          this.servicesGrid.innerHTML = filtered.map(service => this.createServiceCardHTML(service)).join("");
+        }
+
+        if (window.lucide && typeof lucide.createIcons === "function") {
+          lucide.createIcons();
+        }
+      }
+
+      createServiceCardHTML(service) {
+        const targetAudience = (service.roles.includes("Todos") || service.roles.length >= 4)
+          ? "Todos los públicos"
+          : service.roles.join(", ");
+
+        const badgeColors = {
+          "Acreditación": "bg-sky-100 text-sky-800 border-sky-200",
+          "Fondos y Becas": "bg-amber-100 text-amber-800 border-amber-200",
+          "Literatura y Datos": "bg-emerald-100 text-emerald-800 border-emerald-200",
+          "Empresas e Innovación": "bg-indigo-100 text-indigo-800 border-indigo-200",
+          "Infraestructura": "bg-cyan-100 text-cyan-800 border-cyan-200",
+          "Formación y Semilleros": "bg-purple-100 text-purple-800 border-purple-200"
+        };
+        const catBadgeClass = badgeColors[service.category] || "bg-slate-100 text-slate-800 border-slate-200";
+
+        const iconSvg = SERVICE_ICONS[service.id] || `<svg class="w-6 h-6 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>`;
+
+        return `
+          <article class="bg-surface rounded-3xl border border-slate-200/90 shadow-card hover:shadow-card-hover hover:-translate-y-1 hover:border-sky-300 transition-all duration-200 flex flex-col justify-between p-6 group relative overflow-hidden">
+            
+            <!-- Barra superior sutil de categoría -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-concytec-cyan to-concytec-navy opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+            <div>
+              <!-- Cabecera de la Tarjeta -->
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold ${catBadgeClass} border">
+                  ${service.category}
+                </span>
+
+                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  ${service.statusBadge}
+                </span>
+              </div>
+
+              <!-- Icono y Título Dinámicos -->
+              <div class="flex items-start gap-3.5 mb-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-100 to-sky-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-sky-100 transition-all border border-slate-200 shadow-sm">
+                  ${iconSvg}
+                </div>
+                <div>
+                  <h3 class="font-brand font-bold text-base sm:text-lg text-text-main group-hover:text-concytec-navy transition-colors leading-snug line-clamp-2">
+                    ${this.highlightMatch(service.title, this.state.searchQuery)}
+                  </h3>
+                  <div class="text-xs text-text-secondary font-medium mt-0.5 line-clamp-1">
+                    ${service.managingEntity}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Descripción Breve Orientada al Beneficio -->
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2">
+                ${this.highlightMatch(service.description, this.state.searchQuery)}
+              </p>
+
+              <!-- Metadatos Accesibles con Iconos -->
+              <div class="space-y-2 mb-5 pb-4 border-b border-slate-100 text-xs text-slate-600">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>Público: <strong class="text-slate-700 font-semibold">${targetAudience}</strong></span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Costo: <strong class="text-emerald-700 font-bold">${service.cost}</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de Acción: Ver Requisitos como acción principal -->
+            <div class="flex items-center gap-2 pt-1">
+              <button 
+                type="button"
+                onclick="window.concytecApp.openServiceModal('${service.id}')"
+                class="flex-1 bg-concytec-navy hover:bg-concytec-dark text-white py-2.5 px-3 rounded-2xl font-brand font-bold text-xs uppercase tracking-wider text-center transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 active:scale-95"
+              >
+                <svg class="w-4 h-4 text-concytec-cyanVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>Ver requisitos y detalles</span>
+              </button>
+
+              <a 
+                href="${service.url}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-2.5 rounded-2xl border border-slate-300 hover:border-concytec-cyan hover:bg-sky-50 text-slate-700 hover:text-concytec-navy transition-all active:scale-95 flex items-center justify-center shadow-sm"
+                title="Ir al portal oficial de ${service.title}"
+                aria-label="Abrir enlace externo oficial de ${service.title}"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+
+          </article>
+        `;
+      }
+
+      updateCounters() {
+        const filtered = this.getFilteredServices();
+        const total = this.services.length;
+
+        this.serviceCounterBadge.textContent = `Mostrando ${filtered.length} de ${total} servicios oficiales`;
+
+        const hasFilters = this.state.searchQuery !== "" || this.state.selectedRole !== "Todos" || this.state.selectedCategory !== "Todos";
+        if (hasFilters) {
+          this.btnResetAllFilters.classList.remove("hidden");
+        } else {
+          this.btnResetAllFilters.classList.add("hidden");
+        }
+      }
+
+      // 7. RENDERIZADO DINÁMICO DE CONVOCATORIAS CON FECHAS CALCULADAS
+      renderGrants() {
+        const container = document.getElementById("convocatoriasCardsList");
+        if (!container) return;
+
+        const now = new Date();
+
+        container.innerHTML = this.grants.map(grant => {
+          const closing = new Date(grant.closingDate);
+          const diffDays = Math.ceil((closing - now) / (1000 * 60 * 60 * 24));
+          const daysText = diffDays > 0 ? `Cierra en ${diffDays} días (${grant.closingDate})` : `Convocatoria cerrada`;
+          const badgeClass = diffDays > 10 ? "bg-amber-100 text-amber-800 border-amber-200" : "bg-red-100 text-red-800 border-red-200";
+
+          return `
+            <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold mb-3">
+                  <span class="text-xs font-bold uppercase tracking-wider text-concytec-navy bg-slate-100 px-2.5 py-1 rounded-lg">${grant.beneficiaryRole}</span>
+                  <span class="${badgeClass} border px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>${daysText}</span>
+                  </span>
+                </div>
+                <h3 class="font-brand font-bold text-base text-text-main group-hover:text-concytec-navy transition-colors mb-2 leading-snug">
+                  ${grant.title}
+                </h3>
+                <p class="text-xs text-text-secondary leading-relaxed mb-4">
+                  ${grant.description}
+                </p>
+                <div class="text-xs font-bold text-concytec-navy bg-sky-50 border border-sky-100 p-3 rounded-2xl mb-5 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-concytec-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                  <span>Monto: ${grant.grantAmount}</span>
+                </div>
+              </div>
+              <a 
+                href="${grant.basesUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full text-center bg-concytec-navy hover:bg-concytec-dark text-white py-2.5 rounded-2xl text-xs font-brand font-bold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-2 active:scale-95"
+              >
+                <span>Descargar bases y postular</span>
+                <svg class="w-4 h-4 text-concytec-cyanVinc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // 8. FOCUS TRAP EN MODALES
+      trapFocus(modalElement) {
+        this.lastFocusedElement = document.activeElement;
+        const focusable = modalElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length > 0) {
+          focusable[0].focus();
+        }
+
+        modalElement.onkeydown = (e) => {
+          if (e.key === "Tab") {
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+              if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+              }
+            } else {
+              if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+              }
+            }
+          }
+        };
+      }
+
+      restoreFocus() {
+        if (this.lastFocusedElement && typeof this.lastFocusedElement.focus === "function") {
+          this.lastFocusedElement.focus();
+        }
+      }
+
+      // Modal de Detalle
+      openServiceModal(serviceId) {
+        const service = this.services.find(s => s.id === serviceId);
+        if (!service) return;
+
+        document.getElementById("modalCategoryBadge").textContent = service.category;
+        document.getElementById("modalStatusBadge").textContent = service.statusBadge;
+        document.getElementById("modalServiceTitle").textContent = service.title;
+        document.getElementById("modalEntityManaging").textContent = service.managingEntity;
+        document.getElementById("modalServiceDescription").textContent = service.description;
+        document.getElementById("modalCostInfo").textContent = service.cost;
+        document.getElementById("modalTimeInfo").textContent = service.estimatedTime;
+        document.getElementById("modalSupportInfo").textContent = `${service.supportEmail} · ${service.supportPhone}`;
+        document.getElementById("modalDirectAccessUrl").href = service.url;
+
+        const reqList = document.getElementById("modalRequirementsList");
+        reqList.innerHTML = service.requirements.map(req => `
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>${req}</span>
+          </li>
+        `).join("");
+
+        this.serviceDetailModal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+        this.trapFocus(this.serviceDetailModal);
+      }
+
+      closeServiceModal() {
+        this.serviceDetailModal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        this.restoreFocus();
+      }
+
+      // Modal de Autenticación
+      openLoginModal() {
+        this.loginModal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+        this.trapFocus(this.loginModal);
+      }
+
+      closeLoginModal() {
+        this.loginModal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        this.restoreFocus();
+      }
+
+      handleRealLogin(e, method) {
+        e.preventDefault();
+        const docNum = document.getElementById("loginDocNum").value.trim() || "10293847";
+        this.state.userLoggedIn = true;
+        this.state.userName = `Dr. Carlos Mendoza (DNI ***${docNum.slice(-3)})`;
+
+        this.closeLoginModal();
+
+        document.getElementById("btnLoginAction").classList.add("hidden");
+        const userMenu = document.getElementById("userLoggedInMenu");
+        userMenu.classList.remove("hidden");
+        document.getElementById("userNameDisplay").textContent = this.state.userName;
+
+        const myTramites = document.getElementById("mis-tramites");
+        myTramites.classList.remove("hidden");
+        myTramites.scrollIntoView({ behavior: "smooth" });
+      }
+
+      handleLogout() {
+        this.state.userLoggedIn = false;
+        this.state.userName = "";
+        document.getElementById("btnLoginAction").classList.remove("hidden");
+        document.getElementById("userLoggedInMenu").classList.add("hidden");
+        document.getElementById("mis-tramites").classList.add("hidden");
+      }
+
+      // Modal Legal
+      openLegalModal(type) {
+        const legalData = LEGAL_TEXTS[type];
+        if (!legalData) return;
+
+        document.getElementById("legalModalTitle").textContent = legalData.title;
+        document.getElementById("legalModalBody").innerHTML = legalData.body;
+
+        this.legalModal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+        this.trapFocus(this.legalModal);
+      }
+
+      closeLegalModal() {
+        this.legalModal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        this.restoreFocus();
+      }
+
+      // Asistente Guiado
+      openWizardModal() {
+        this.resetWizard();
+        this.wizardModal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+        this.trapFocus(this.wizardModal);
+      }
+
+      closeWizardModal() {
+        this.wizardModal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        this.restoreFocus();
+      }
+
+      wizardSelect(step, value) {
+        if (step === "role") {
+          this.wizardState.role = value;
+          document.getElementById("wizardStep1").classList.add("hidden");
+          document.getElementById("wizardStep2").classList.remove("hidden");
+        } else if (step === "need") {
+          this.wizardState.need = value;
+          document.getElementById("wizardStep2").classList.add("hidden");
+          document.getElementById("wizardResult").classList.remove("hidden");
+
+          let recService = this.services[0];
+          if (value === "fondos") recService = this.services.find(s => s.id === "prociencia");
+          else if (value === "tributario") recService = this.services.find(s => s.id === "beneficios-tributarios");
+          else if (value === "tesis") recService = this.services.find(s => s.id === "alicia");
+
+          document.getElementById("wizardResultTitle").textContent = recService.title;
+          document.getElementById("wizardResultDesc").textContent = recService.description;
+          document.getElementById("wizardResultBtn").onclick = () => {
+            this.closeWizardModal();
+            this.openServiceModal(recService.id);
+          };
+        }
+      }
+
+      resetWizard() {
+        this.wizardState = { role: null, need: null };
+        document.getElementById("wizardStep1").classList.remove("hidden");
+        document.getElementById("wizardStep2").classList.add("hidden");
+        document.getElementById("wizardResult").classList.add("hidden");
+      }
+
+      submitFeedback(isPositive) {
+        document.getElementById("feedbackQuestionBlock").classList.add("hidden");
+        document.getElementById("feedbackThanksBlock").classList.remove("hidden");
+      }
+
+      dismissCookieNotice() {
+        document.getElementById("cookieNoticeBanner").classList.add("hidden");
+      }
+
+      toggleMobileMenu() {
+        const isHidden = this.mobileMenu.classList.toggle("hidden");
+        this.mobileMenuBtn.setAttribute("aria-expanded", (!isHidden).toString());
+      }
+
+      closeAllModals() {
+        this.closeServiceModal();
+        this.closeLoginModal();
+        this.closeLegalModal();
+        this.closeWizardModal();
+      }
+
+      escapeHtml(str) {
+        return (str || "").replace(/[&<>'"]/g, 
+          tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+          }[tag] || tag)
+        );
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      window.concytecApp = new ConcytecConectaApp();
+      if (window.lucide && typeof lucide.createIcons === "function") {
+        lucide.createIcons();
+      }
+    });
+  </script>
+
+</body>
+</html>

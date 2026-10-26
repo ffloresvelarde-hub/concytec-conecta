@@ -1,0 +1,214 @@
+[
+  {
+    "id": "renacyt",
+    "title": "Renacyt & CTI Vitae",
+    "category": "Acreditación",
+    "roles": ["Investigador"],
+    "managingEntity": "Dirección de Evaluación y Gestión del Conocimiento (DEGC) - Concytec",
+    "description": "Registra tu hoja de vida científica y obtén o renueva tu calificación como investigador oficial del Perú.",
+    "url": "https://servicio-renacyt.concytec.gob.pe",
+    "statusBadge": "Ventanilla permanente",
+    "statusType": "permanent",
+    "cost": "100% Gratuito (Ley N° 31250)",
+    "estimatedTime": "30 días hábiles de evaluación por comité",
+    "requirements": [
+      "DNI vigente, Carné de Extranjería o Pasaporte verificado ante RENIEC / Migraciones.",
+      "Filiación institucional académica o centro de investigación declarado.",
+      "Haber publicado artículos en revistas indexadas (Scopus, Web of Science, SciELO) o patentes concedidas.",
+      "Grado académico registrado ante SUNEDU o revalidación con resolución apostillada."
+    ],
+    "supportEmail": "renacyt@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030 (Central Telefónica)",
+    "keywords": ["renacyt", "cti vitae", "dina", "investigador", "calificacion", "constancia", "evaluacion", "curriculum", "acreditacion"]
+  },
+  {
+    "id": "prociencia",
+    "title": "Prociencia: Fondos Concursables y Becas",
+    "category": "Fondos y Becas",
+    "roles": ["Investigador", "Universidad"],
+    "managingEntity": "Programa Nacional de Investigación Científica y Estudios Avanzados (PROCIENCIA)",
+    "description": "Subvenciones financieras no reembolsables para proyectos de investigación aplicada, pasantías y becas de posgrado.",
+    "url": "https://prociencia.gob.pe/convocatorias/",
+    "statusBadge": "Convocatorias activas",
+    "statusType": "grant",
+    "cost": "Gratuito para postulación (Requiere contrapartida según bases)",
+    "estimatedTime": "Según cronograma oficial de cada concurso",
+    "requirements": [
+      "Estar adscrito a una universidad licenciada, instituto público de investigación o centro de CTI.",
+      "Investigador principal activo y calificado en el Registro Renacyt.",
+      "Carta de compromiso institucional y propuesta técnica con presupuesto detallado.",
+      "Postulación virtual mediante el Sistema de Gestión de Convocatorias de Prociencia."
+    ],
+    "supportEmail": "contacto@prociencia.gob.pe",
+    "supportPhone": "(01) 644-0004",
+    "keywords": ["prociencia", "fondos", "becas", "subvenciones", "financiamiento", "concurso", "proyectos", "fondecyt"]
+  },
+  {
+    "id": "alicia",
+    "title": "ALICIA: Repositorio Nacional Digital",
+    "category": "Literatura y Datos",
+    "roles": ["Todos"],
+    "managingEntity": "Dirección de Políticas y Programas de CTI - Concytec",
+    "description": "Más de 500,000 tesis universitarias, artículos científicos y patentes peruanas disponibles en acceso abierto.",
+    "url": "https://alicia.concytec.gob.pe",
+    "statusBadge": "Acceso libre 24/7",
+    "statusType": "open",
+    "cost": "100% Gratuito y de libre acceso",
+    "estimatedTime": "Descarga inmediata sin registro previo",
+    "requirements": [
+      "Acceso libre, irrestricto y gratuito para toda la ciudadanía.",
+      "No requiere inicio de sesión para consulta ni descarga de textos completos en PDF.",
+      "Para universidades depositarias: poseer un repositorio institucional compatible con protocolo OAI-PMH."
+    ],
+    "supportEmail": "alicia@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["alicia", "tesis", "articulos", "repositorio", "descargas", "pdf", "open access", "libros", "investigacion", "literatura"]
+  },
+  {
+    "id": "biblioteca-virtual",
+    "title": "Biblioteca Virtual de CTI",
+    "category": "Literatura y Datos",
+    "roles": ["Investigador"],
+    "managingEntity": "Red Nacional de Información Científica - Concytec",
+    "description": "Consulta a texto completo en Scopus, ScienceDirect, IEEE y bases científicas internacionales suscritas por Concytec.",
+    "url": "https://biblioteca.concytec.gob.pe",
+    "statusBadge": "Acceso por acreditación",
+    "statusType": "restricted",
+    "cost": "Gratuito para investigadores calificados",
+    "estimatedTime": "Acceso remoto inmediato con credenciales CTI Vitae",
+    "requirements": [
+      "Calificación activa y vigente en el Registro Renacyt.",
+      "Inicio de sesión mediante credenciales de CTI Vitae.",
+      "Uso exclusivo para fines de investigación académica y no redistribución comercial."
+    ],
+    "supportEmail": "bibliotecavirtual@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["biblioteca", "scopus", "sciencedirect", "ieee", "bases de datos", "revistas", "papers", "articulos cientificos"]
+  },
+  {
+    "id": "beneficios-tributarios",
+    "title": "Beneficios Tributarios en I+D+i (Ley N° 30309)",
+    "category": "Empresas e Innovación",
+    "roles": ["Empresa"],
+    "managingEntity": "Subdirección de Innovación y Transferencia Tecnológica - Concytec",
+    "description": "Deducción tributaria adicional de hasta 240% (150%, 175% o 240% según tamaño de empresa) en el Impuesto a la Renta por invertir en proyectos de innovación.",
+    "url": "https://portal.concytec.gob.pe/index.php/servicios/beneficios-tributarios-en-i-d-i",
+    "statusBadge": "Ventanilla anual",
+    "statusType": "permanent",
+    "cost": "Trámite gratuito ante Concytec",
+    "estimatedTime": "30 a 45 días hábiles para calificación técnica de proyecto",
+    "requirements": [
+      "Empresa domiciliada en el Perú con RUC activo y condición de habido ante SUNAT.",
+      "Proyecto de I+D+i formulado con objetivos, cronograma e impacto técnico.",
+      "Centro de I+D propio o entidad externa autorizada por Concytec.",
+      "Presentación de la solicitud antes del inicio del ejercicio fiscal a declarar."
+    ],
+    "supportEmail": "beneficiostributarios@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["ley 30309", "beneficio tributario", "impuesto a la renta", "empresas", "deduccion", "i+d+i", "sunat", "innovacion"]
+  },
+  {
+    "id": "vinculate",
+    "title": "Vincúlate & Catálogo Asóciate",
+    "category": "Empresas e Innovación",
+    "roles": ["Empresa", "Universidad"],
+    "managingEntity": "Dirección de Políticas y Programas de CTI - Concytec",
+    "description": "Plataforma de articulación academia-industria, nivel de madurez TRL y catálogo de tecnologías nacionales listas para licenciamiento.",
+    "url": "https://vinculate.concytec.gob.pe",
+    "statusBadge": "Catálogo permanente",
+    "statusType": "permanent",
+    "cost": "Acceso y registro 100% gratuito",
+    "estimatedTime": "Inmediato para búsqueda; validación de ficha en 5 días",
+    "requirements": [
+      "Para inventores y universidades: tecnologías con madurez TRL 4 o superior con solicitud de patente o derecho de autor.",
+      "Para empresas: búsqueda abierta y contacto directo para convenios de I+D.",
+      "Validación previa por Oficina de Transferencia Tecnológica (OTT) universitaria."
+    ],
+    "supportEmail": "vinculate@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["vinculate", "transferencia tecnologica", "patentes", "asociate", "trl", "licenciamiento", "spin-off", "prototipos"]
+  },
+  {
+    "id": "perucris",
+    "title": "Plataforma #PerúCRIS",
+    "category": "Infraestructura",
+    "roles": ["Universidad", "Investigador"],
+    "managingEntity": "Dirección de Sistemas de Información y Comunicación del CTI",
+    "description": "Directorio unificado de infraestructura científica, laboratorios acreditados y equipamiento mayor de investigación en el país.",
+    "url": "https://perucris.concytec.gob.pe",
+    "statusBadge": "Directorio activo",
+    "statusType": "open",
+    "cost": "100% Gratuito",
+    "estimatedTime": "Consulta pública inmediata; alta institucional según convenio",
+    "requirements": [
+      "Institución integrante del Sistema Nacional de CTI (SINACTI).",
+      "Inventario institucional de equipamiento científico mayor y servicios de ensayo.",
+      "Adhesión técnica a los estándares de interoperabilidad nacional de Concytec."
+    ],
+    "supportEmail": "perucris@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["perucris", "cris", "laboratorios", "infraestructura", "equipos", "microscopio", "red nacional", "sinacti"]
+  },
+  {
+    "id": "octi",
+    "title": "OCTI: Observatorio de Ciencia y Tecnología",
+    "category": "Literatura y Datos",
+    "roles": ["Investigador", "Empresa"],
+    "managingEntity": "Observatorio de Ciencia, Tecnología e Innovación - Concytec",
+    "description": "Tableros de inteligencia, estadísticas oficiales, vigilancia tecnológica y prospectiva para la toma de decisiones estratégicas.",
+    "url": "https://octi.concytec.gob.pe",
+    "statusBadge": "Datos abiertos",
+    "statusType": "open",
+    "cost": "100% Gratuito",
+    "estimatedTime": "Acceso libre a dashboards interactivos",
+    "requirements": [
+      "Acceso libre a tableros e indicadores de I+D+i sin requerir clave.",
+      "Para descarga de microdatos y encuestas nacionales: solicitud con fines de investigación académica."
+    ],
+    "supportEmail": "octi@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["octi", "observatorio", "estadisticas", "indicadores", "vigilancia tecnologica", "datos abiertos", "encuestas", "datos"]
+  },
+  {
+    "id": "sigeccyt",
+    "title": "Clubes de Ciencia y Tecnología (SIGECCYT)",
+    "category": "Formación y Semilleros",
+    "roles": ["Docente / Estudiante"],
+    "managingEntity": "Dirección de Políticas y Programas de CTI / Educación STEAM",
+    "description": "Acreditación oficial de semilleros escolares STEAM en colegios públicos y privados para coordinar la Feria Escolar Eureka.",
+    "url": "https://clubescyt.concytec.gob.pe",
+    "statusBadge": "Inscripciones abiertas",
+    "statusType": "permanent",
+    "cost": "100% Gratuito para colegios del país",
+    "estimatedTime": "Aprobación de ficha institucional en 7 días hábiles",
+    "requirements": [
+      "Institución Educativa de Educación Básica Regular (EBR) con código modular oficial ante MINEDU.",
+      "Docente asesor designado con resolución directoral de la escuela.",
+      "Padrón activo de mínimo 5 estudiantes integrantes en primaria o secundaria."
+    ],
+    "supportEmail": "clubescyt@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["clubes", "sigeccyt", "eureka", "colegios", "docentes", "estudiantes", "steam", "escolar", "feria escolar", "semilleros"]
+  },
+  {
+    "id": "capacitate",
+    "title": "Capacítate Concytec: Campus Virtual",
+    "category": "Formación y Semilleros",
+    "roles": ["Todos"],
+    "managingEntity": "Subdirección de Gestión del Conocimiento - Concytec",
+    "description": "Cursos virtuales gratuitos autogestionados en integridad científica, redacción de patentes, búsqueda de literatura y formulación de proyectos.",
+    "url": "https://capacitate.concytec.gob.pe/",
+    "statusBadge": "Cursos disponibles",
+    "statusType": "open",
+    "cost": "100% Gratuito con certificación digital",
+    "estimatedTime": "Acceso inmediato al registrarse",
+    "requirements": [
+      "DNI, Carné de Extranjería o Pasaporte vigente.",
+      "Cuenta de correo electrónico personal activa para el Campus Virtual.",
+      "Completar módulos y evaluación mínima aprobatoria de 14/20 para emitir constancia."
+    ],
+    "supportEmail": "capacitacion@concytec.gob.pe",
+    "supportPhone": "(01) 399-0030",
+    "keywords": ["capacitate", "cursos", "virtual", "integridad cientifica", "patentes", "certificacion", "gratuito", "aulavirtual", "formacion"]
+  }
+]

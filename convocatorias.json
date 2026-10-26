@@ -1,0 +1,35 @@
+[
+  {
+    "id": "conv-01",
+    "title": "Proyectos de Investigación Aplicada Multidisciplinarios 2026-I",
+    "beneficiary": "Universidades e Institutos de Investigación",
+    "beneficiaryRole": "Universidad",
+    "description": "Subvención para proyectos colaborativos de ciencia y tecnología con impacto en sectores productivos prioritarios.",
+    "grantAmount": "Hasta S/ 350,000 por proyecto",
+    "closingDate": "2026-11-20",
+    "basesUrl": "https://prociencia.gob.pe/convocatorias/",
+    "status": "active"
+  },
+  {
+    "id": "conv-02",
+    "title": "Becas Doctorales en Alianzas Interinstitucionales",
+    "beneficiary": "Investigadores y Docentes Universitarios",
+    "beneficiaryRole": "Investigador",
+    "description": "Financiamiento integral de pensión académica y estipendio mensual para doctorados acreditados en el Perú.",
+    "grantAmount": "Cobertura 100% de aranceles + estipendio mensual",
+    "closingDate": "2026-12-15",
+    "basesUrl": "https://prociencia.gob.pe/convocatorias/",
+    "status": "active"
+  },
+  {
+    "id": "conv-03",
+    "title": "Validación y Empaquetamiento Tecnológico para Mercado",
+    "beneficiary": "Empresas en alianza con Centros de I+D",
+    "beneficiaryRole": "Empresa",
+    "description": "Fondos de escalamiento para madurar tecnologías de TRL 4 a TRL 7 y facilitar su adopción comercial.",
+    "grantAmount": "Hasta S/ 250,000 no reembolsable",
+    "closingDate": "2026-12-30",
+    "basesUrl": "https://prociencia.gob.pe/convocatorias/",
+    "status": "active"
+  }
+]
